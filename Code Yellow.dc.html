@@ -35,10 +35,15 @@
   <div style="position:absolute;top:1900px;right:-200px;width:600px;height:600px;border-radius:50%;background:{{ blobLavender }};filter:blur(140px);opacity:{{ blobOpacity }};animation:floatA 24s ease-in-out infinite;pointer-events:none"></div>
 
   <nav style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:rgba(255,255,255,0.55);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.6)">
-    <a href="./Home.dc.html" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
+    <a href="./index.html" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
       <span>Tram Dao</span>
     </a>
-    <a href="./Home.dc.html" style="display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:14px">← Back to portfolio</a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:500;color:{{ textSecondary }}">
+      <a href="./index.html#work" style="{{ navLinkStyle }}">Work</a>
+      <a href="./index.html#about" style="{{ navLinkStyle }}">About</a>
+      <a href="./index.html#contact" style="{{ navLinkStyle }}">Contact</a>
+      <a href="./Resume.dc.html" style="{{ navLinkStyle }}">Resume</a>
+    </div>
   </nav>
 
   <section style="position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:40px 32px 0">
@@ -302,7 +307,7 @@
       </div>
     </div>
 
-    <a href="./Portfolio.dc.html" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
+    <a href="./index.html" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
   </section>
 </div>
 
@@ -314,6 +319,7 @@ class Component extends DCLogic {
       bgColor: '#FCFAF7',
       textPrimary: '#1A1A1A',
       textSecondary: '#6B6560',
+      navLinkStyle: { transition: 'color .15s' },
       accentColor: '#7C3AED',
       accentSoft: 'rgba(124,58,237,0.12)',
       trophyIcon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>' },

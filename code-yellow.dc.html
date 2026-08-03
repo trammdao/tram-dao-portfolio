@@ -10,7 +10,7 @@
 <x-dc>
 <helmet data-dc-atomics="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet">
 <style>
   body{margin:0;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -26,7 +26,7 @@
   }
 </style>
 </helmet>
-<div style="position:relative;min-height:100vh;background:{{ bgColor }};overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;color:{{ textPrimary }}">
+<div style="position:relative;min-height:100vh;background:{{ bgColor }};overflow:hidden;font-family:'Inter',sans-serif;color:{{ textPrimary }}">
 
   <svg style="position:absolute;top:0;left:0;width:100%;height:900px;opacity:0.32;mix-blend-mode:overlay;pointer-events:none;z-index:0">
     <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 1 0"></feColorMatrix></filter>
@@ -39,14 +39,14 @@
   <div style="position:absolute;top:1900px;right:-200px;width:600px;height:600px;border-radius:50%;background:{{ blobLavender }};filter:blur(140px);opacity:{{ blobOpacity }};animation:floatA 24s ease-in-out infinite;pointer-events:none"></div>
 
   <nav style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:rgba(255,255,255,0.55);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.6)">
-    <a href="./index.html" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
+    <a href="/" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
       <span>Tram Dao</span>
     </a>
-    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:500;color:{{ textSecondary }}">
-      <a href="./index.html#work" style="{{ navLinkStyle }}">Work</a>
-      <a href="./index.html#about" style="{{ navLinkStyle }}">About</a>
-      <a href="./index.html#contact" style="{{ navLinkStyle }}">Contact</a>
-      <a href="./Resume.dc.html" style="{{ navLinkStyle }}">Resume</a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:400;color:{{ textSecondary }}">
+      <a href="/#work" style="{{ navLinkStyle }}">Work</a>
+      <a href="/#about" style="{{ navLinkStyle }}">About</a>
+      <a href="/#contact" style="{{ navLinkStyle }}">Contact</a>
+      <a href="/resume" style="{{ navLinkStyle }}">Resume</a>
     </div>
     <button class="nav-hamburger" onClick="{{ toggleMobileMenu }}" aria-label="Open menu" style="align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);cursor:pointer">
       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="2" y1="5" x2="18" y2="5"></line><line x1="2" y1="10" x2="18" y2="10"></line><line x1="2" y1="15" x2="18" y2="15"></line></svg>
@@ -60,10 +60,10 @@
           <svg width="16" height="16" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="3" x2="17" y2="17"></line><line x1="17" y1="3" x2="3" y2="17"></line></svg>
         </button>
       </div>
-      <a href="./index.html#work" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Work</a>
-      <a href="./index.html#about" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">About</a>
-      <a href="./index.html#contact" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Contact</a>
-      <a href="./Resume.dc.html" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;color:{{ textPrimary }}">Resume</a>
+      <a href="/#work" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Work</a>
+      <a href="/#about" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">About</a>
+      <a href="/#contact" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Contact</a>
+      <a href="/resume" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;color:{{ textPrimary }}">Resume</a>
     </div>
   </sc-if>
 
@@ -77,8 +77,8 @@
       <span style="font-size:13px;font-weight:600;color:{{ textPrimary }};border:1.5px solid rgba(0,0,0,0.15);padding:6px 15px;border-radius:999px">Payments</span>
       <span style="font-size:13px;font-weight:600;color:{{ textPrimary }};border:1.5px solid rgba(0,0,0,0.15);padding:6px 15px;border-radius:999px">Experimentation</span>
     </div>
-    <h1 class="cs-title" style="margin:0 0 16px;font-size:46px;line-height:1.15;font-weight:700;letter-spacing:-0.02em">Code Yellow: Outperforming Epic to save a $25M client</h1>
-    <p style="margin:0;font-size:19px;line-height:1.6;color:{{ textSecondary }};font-weight:500;max-width:680px">How rapid experimentation outperformed Epic and saved a $25M client.</p>
+    <h1 class="cs-title" style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:38px;line-height:1.2;font-weight:700;letter-spacing:-0.02em">Code Yellow: Outperforming Epic to save a $25M client</h1>
+    <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }};font-weight:400;max-width:680px">How rapid experimentation outperformed Epic and saved a $25M client.</p>
   </section>
 
   
@@ -88,8 +88,8 @@
     <div class="cs-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
       <sc-for list="{{ headlineMetrics }}" as="m" hint-placeholder-count="3">
         <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
-          <div style="font-size:30px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">{{ m.value }}</div>
-          <div style="font-size:14px;color:{{ textSecondary }};font-weight:500;margin-top:6px;line-height:1.4">{{ m.label }}</div>
+          <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ m.value }}</div>
+          <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:6px;line-height:1.4">{{ m.label }}</div>
         </div>
       </sc-for>
     </div>
@@ -97,8 +97,8 @@
       <div class="cs-facts" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px 24px">
         <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
           <div>
-            <div style="font-size:12px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }}">{{ f.k }}</div>
-            <div style="font-size:15px;font-weight:600;margin-top:4px;color:{{ textPrimary }}">{{ f.v }}</div>
+            <div style="font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }}">{{ f.k }}</div>
+            <div style="font-size:18px;font-weight:400;margin-top:4px;color:{{ textSecondary }}">{{ f.v }}</div>
           </div>
         </sc-for>
       </div>
@@ -108,42 +108,42 @@
   <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:20px 32px 100px;display:flex;flex-direction:column;gap:56px">
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">The situation</h2>
-      <p style="margin:0 0 16px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">Cedar's biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response, responsible for defining and executing on a comms personalization strategy.&nbsp;</p>
-      <p style="margin:0;font-size:17px;line-height:1.75;color:{{ textSecondary }}">The bakeoff was measured two ways: First, the client paused Cedar at one location and ran a before/after comparison there. Before they paused us, we had a month to rapidly launch experiments and boost our performance baseline going in. Second, they compared that paused location against a sister location that kept Cedar on — the more direct head-to-head against Epic, where I focused most of the experimentation.</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The situation</h2>
+      <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Cedar's biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response, responsible for defining and executing on a comms personalization strategy.&nbsp;</p>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">The bakeoff was measured two ways: First, the client paused Cedar at one location and ran a before/after comparison there. Before they paused us, we had a month to rapidly launch experiments and boost our performance baseline going in. Second, they compared that paused location against a sister location that kept Cedar on — the more direct head-to-head against Epic, where I focused most of the experimentation.</p>
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">Identifying the opportunity</h2>
-      <p style="margin:0 0 24px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">Data Science funnel and cohort analysis pointed to an opportunity to improve communications for insured patients with big bills.&nbsp;</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Identifying the opportunity</h2>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Data Science funnel and cohort analysis pointed to an opportunity to improve communications for insured patients with big bills.&nbsp;</p>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
         <sc-for list="{{ opportunityCards }}" as="c" hint-placeholder-count="2">
           <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:28px;display:flex;flex-direction:column;gap:14px">
             <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }}" dangerouslySetInnerHTML="{{ c.icon }}"></div>
-            <h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-0.01em">{{ c.title }}</h3>
-            <p style="margin:0;font-size:15.5px;line-height:1.6;color:{{ textSecondary }}">{{ c.desc }}</p>
+            <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">{{ c.title }}</h3>
+            <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">{{ c.desc }}</p>
           </div>
         </sc-for>
       </div>
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">Tying the opportunity to patient research</h2>
-      <p style="margin:0 0 16px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">After we identified an opportunity to improve top of funnel conversion for patients with big bills, I wanted to dig into who these patients actually are. I connected it to prior UXR research on ALICE patients: <b>A</b>sset-<b>L</b>imited, <b>I</b>ncome-<b>C</b>onstrained, <b>E</b>mployed. These patients make too much to qualify for financial assistance, but are still struggling to pay their medical bills in addition to other rising life expenses.&nbsp;</p>
-      <p style="margin:0 0 20px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">Understanding these patients shaped how I approached communicating with these patients: Rather than transaction ("here's what you owe"), comms needed to be supportive and directive in helping patients find affordable solutions for managing their rising healthcare costs.&nbsp;</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Tying the opportunity to patient research</h2>
+      <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">After we identified an opportunity to improve top of funnel conversion for patients with big bills, I wanted to dig into who these patients actually are. I connected it to prior UXR research on ALICE patients: <b>A</b>sset-<b>L</b>imited, <b>I</b>ncome-<b>C</b>onstrained, <b>E</b>mployed. These patients make too much to qualify for financial assistance, but are still struggling to pay their medical bills in addition to other rising life expenses.&nbsp;</p>
+      <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Understanding these patients shaped how I approached communicating with these patients: Rather than transaction ("here's what you owe"), comms needed to be supportive and directive in helping patients find affordable solutions for managing their rising healthcare costs.&nbsp;</p>
 
       
-      <div style="display:flex;align-items:center;justify-content:center;padding:20px 0">
-        <img src="./assets/alice-slide-4.png" style="width:348px;max-width:34%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-5deg);position:relative;z-index:1;margin-right:-4%">
-        <img src="./assets/alice-slide-5.png" style="width:329px;max-width:32%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(2deg);position:relative;z-index:2">
-        <img src="./assets/alice-slide-6.png" style="width:221px;max-width:22%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-3deg);position:relative;z-index:3;margin-left:-4%">
+      <div style="display:flex;align-items:center;justify-content:center;padding:20px 0;width:100%">
+        <img src="./assets/alice-slide-4.png" style="width:38%;max-width:38%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-5deg);position:relative;z-index:1;margin-right:-4%">
+        <img src="./assets/alice-slide-5.png" style="width:36%;max-width:36%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(2deg);position:relative;z-index:2">
+        <img src="./assets/alice-slide-6.png" style="width:24%;max-width:24%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-3deg);position:relative;z-index:3;margin-left:-4%">
       </div>
       <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:{{ textSecondary }};text-align:center;font-style:italic">Subset of ALICE are patients who "treatment drained." They experience a dramatic rise in medical costs that become hard to manage with other life expenses.</p>
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">Brainstorming comms for ALICE patients</h2>
-      <p style="margin:0 0 20px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">I ran ALICE x Comms brainstorm sessions with the cross-functional project team and the Design team, working from the question: how might we personalize these communications so patients feel more supported in managing and paying their bills? That produced a handful of directions that I then partnered with UXR to concept test with ALICE-lookalike patients.&nbsp;</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Brainstorming comms for ALICE patients</h2>
+      <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I ran ALICE x Comms brainstorm sessions with the cross-functional project team and the Design team, working from the question: how might we personalize these communications so patients feel more supported in managing and paying their bills? That produced a handful of directions that I then partnered with UXR to concept test with ALICE-lookalike patients.&nbsp;</p>
 
       <div style="display:flex;align-items:center;justify-content:center;padding:20px 0">
         <img src="./assets/brainstorm-board-1.png" style="width:55%;border-radius:16px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-4deg);position:relative;z-index:1;margin-right:-6%">
@@ -154,36 +154,36 @@
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">Turning concepts into minimal viable tests</h2>
-      <p style="margin:0;font-size:17px;line-height:1.75;color:{{ textSecondary }}">We had a goal of impacting patients 1x a week. This was made possible with an internal email tool I previously designed called Promoter, which allowed us to send one-off emails to targeted lists within a few days. While these emails were much more simple than our typical emails, it allowed us to launch experiments to get a quick signal on our ideas before further eng investment. We called these email experiments <b>minimal viable tests</b>. Here are two examples of them.&nbsp;</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Turning concepts into minimal viable tests</h2>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We had a goal of impacting patients 1x a week. This was made possible with an internal email tool I previously designed called Promoter, which allowed us to send one-off emails to targeted lists within a few days. While these emails were much more simple than our typical emails, it allowed us to launch experiments to get a quick signal on our ideas before further eng investment. We called these email experiments <b>minimal viable tests</b>. Here are two examples of them.&nbsp;</p>
     </div>
 
-    <div style="border-radius: 24px; background: rgba(255,255,255,0.55); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 20px 50px rgba(130,110,170,0.12); padding: 40px 44px; display: flex; flex-direction: column; gap: 18px; position: relative">
+    <div style="width:100vw;margin-left:calc(50% - 50vw);background:rgba(124,58,237,0.035);padding:48px 0"><div style="max-width:840px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:18px;position:relative">
       <span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};width:fit-content">EXPERIMENT 01</span>
-      <h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-0.01em">Recommending flexible payment options early on</h3>
+      <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">Recommending flexible payment options early on</h3>
 
       <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:8px 0 4px">
         <div style="display:flex;align-items:flex-end;min-width:0;max-width:100%">
-          <img src="./assets/exp2-design-a.png" style="width:172px;max-width:45%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(-4deg);position:relative;z-index:1">
-          <img src="./assets/exp2-design-b.png" style="width:172px;max-width:45%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(3deg) translateX(-28px);position:relative;z-index:2">
+          <img src="./assets/exp2-design-a.png" style="width:220px;max-width:52%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(-4deg);position:relative;z-index:1">
+          <img src="./assets/exp2-design-b.png" style="width:220px;max-width:52%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(3deg) translateX(-28px);position:relative;z-index:2">
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:220px">
           <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
-            <div style="font-size:26px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">+15.7%</div>
-            <div style="font-size:13.5px;color:{{ textSecondary }};font-weight:500;margin-top:2px">payment rate, $500–$2,500 balances</div>
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">+15.7%</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">payment rate, $500–$2,500 balances</div>
           </div>
           <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
-            <div style="font-size:26px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">+8.24%</div>
-            <div style="font-size:13.5px;color:{{ textSecondary }};font-weight:500;margin-top:2px">relative increase in collection rate</div>
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">+8.24%</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">relative increase in collection rate</div>
           </div>
           <div style="display:flex;gap:14px;align-items:flex-start;border-radius:16px;background:{{ accentSoft }};padding:16px 20px">
             
-            <p style="margin:0;font-size:14.5px;line-height:1.6;color:{{ textSecondary }}"><b style="color: rgb(124, 58, 237);">Hypothesis:&nbsp;</b>Patients avoid paying because they aren't sure which options will work with their budget. If we recommend the options we think will work best, we expect to see more paying.&nbsp;</p>
+            <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}"><b style="color: rgb(124, 58, 237);">Hypothesis:&nbsp;</b>Patients avoid paying because they aren't sure which options will work with their budget. If we recommend the options we think will work best, we expect to see more paying.&nbsp;</p>
           </div>
         </div>
       </div>
 
-      <b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;margin-top:24px;display:block">Turning research insight into minimal viable test</b><div style="color: #6B6560; font-size: 16px">Research participants responded well to learning about flexible payment options, even before their bill was ready. We couldn't communicate with patients before their bill was ready due to integration limitations, so I tested this idea by sending real patients payment recommendations early in their billing journey.</div>
+      <b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;margin-top:24px;display:block">Turning research insight into minimal viable test</b><div style="color: {{ textSecondary }}; font-size: 18px; line-height: 1.7">Research participants responded well to learning about flexible payment options, even before their bill was ready. We couldn't communicate with patients before their bill was ready due to integration limitations, so I tested this idea by sending real patients payment recommendations early in their billing journey.</div>
 
       <div style="display:flex;flex-direction:column;gap:24px;padding:8px 0 4px">
         <div>
@@ -194,51 +194,51 @@
           <img src="./assets/exp1-mvt-stats-v2.png" style="width:100%;margin:0 auto;border-radius:20px;box-shadow:0 20px 50px rgba(130,110,170,0.16);display:block">
           <p style="margin:8px auto 0;max-width:520px;width:100%;font-size:14px;line-height:1.6;color:{{ textSecondary }};font-style:italic;text-align:center">One-off emails to test the idea of recommending specific payment options to patients based on balance size. Sent 7 days after the bill to help patients plan.</p>
         </div>
-      </div><b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;margin-top:24px;display:block">Insights from minimal viable test</b>
+      </div><b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;margin-top:24px;display:block">Insights from minimal viable test</b>
 
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
         <sc-for list="{{ mvtInsights }}" as="i" hint-placeholder-count="2">
           <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:28px;display:flex;flex-direction:column;gap:14px">
             <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }};font-size:20px;font-weight:700" dangerouslySetInnerHTML="{{ i.icon }}"></div>
             
-            <h3 style="margin: 0; font-size: 16px; font-weight: 700; letter-spacing: -0.01em">{{ i.title }}</h3><p style="margin: 0; font-size: 16px; line-height: 1.6; color: {{ textSecondary }}; white-space: pre-wrap">{{ i.desc }}</p>
+            <h3 style="margin:0;font-size:18px;font-weight:700;letter-spacing:-0.01em;line-height:1.4">{{ i.title }}</h3><p style="margin: 0; font-size:18px;line-height:1.7;color:{{ textSecondary }}; white-space: pre-wrap">{{ i.desc }}</p>
           </div>
         </sc-for>
-      </div><b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;margin-top:24px;display:block">Scaling the successful email</b><div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px">
+      </div><b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;margin-top:24px;display:block">Scaling the successful email</b><div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px">
         <img src="./uploads/FPO template.png" style="flex:1;min-width:240px;max-width:100%;height:600px;object-fit:contain;border-radius:20px">
         <div style="flex:1;min-width:240px;max-width:100%;height:600px;border-radius:20px;overflow:hidden"><img src="./uploads/FPO animation.gif" style="width:100%;height:100%;object-fit:contain;display:block"></div>
-      </div><b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;margin-top:24px;display:block">Final results</b><div style="color: #6B6560; font-size: 16px">This solution continued to show steady, positive results. We ended up rolling this out more broadly across multiple clients, resulting in an +8.24% relative increase in collection rate more broadly.&nbsp;</div>
-    </div><div style="border-radius:24px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 20px 50px rgba(130,110,170,0.12);padding:40px 44px;display:flex;flex-direction:column;gap:18px">
+      </div><b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;margin-top:24px;display:block">Final results</b><div style="color: {{ textSecondary }}; font-size: 18px; line-height: 1.7">This solution continued to show steady, positive results. We ended up rolling this out more broadly across multiple clients, resulting in an +8.24% relative increase in collection rate more broadly.&nbsp;</div>
+    </div></div><div style="width:100vw;margin-left:calc(50% - 50vw);background:rgba(124,58,237,0.035);padding:48px 0"><div style="max-width:840px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:18px">
       <span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};width:fit-content">EXPERIMENT 02</span>
-      <h3 style="margin: 0; font-size: 26px; font-weight: 700; letter-spacing: -0.01em">Converting partial payers into payment plan users</h3>
+      <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">Converting partial payers into payment plan users</h3>
 
       <div style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:8px 0 4px">
         <div style="display:flex;align-items:flex-end;min-width:0;max-width:100%">
-          <img src="./assets/exp1-email-design.png" style="width:172px;max-width:45%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(-4deg);position:relative;z-index:1">
-          <img src="./assets/exp1-payment-design.png" style="width:172px;max-width:45%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(3deg) translateX(-28px);position:relative;z-index:2">
+          <img src="./assets/exp1-email-design.png" style="width:220px;max-width:52%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(-4deg);position:relative;z-index:1">
+          <img src="./assets/exp1-payment-design.png" style="width:220px;max-width:52%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.22);transform:rotate(3deg) translateX(-28px);position:relative;z-index:2">
         </div>
         <div style="display:flex;flex-direction:column;gap:12px;flex:1;min-width:220px">
           <div style="display:flex;gap:14px;align-items:flex-start;border-radius:16px;background:{{ accentSoft }};padding:16px 20px">
             
             
-          <p style="margin:0;font-size:14.5px;line-height:1.6;color:{{ textSecondary }}"><b style="color: rgb(124, 58, 236);">Hypothesis:&nbsp;</b>Patients pay part of their balance and dropoff because they can't afford the rest. If we promote payment plans, we can expect more patients paying off their full balance over time.&nbsp;</p></div><div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
-            <div style="font-size:26px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">+18.8%</div>
-            <div style="font-size:13.5px;color:{{ textSecondary }};font-weight:500;margin-top:2px">payment plan conversion</div>
+          <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}"><b style="color: rgb(124, 58, 236);">Hypothesis:&nbsp;</b>Patients pay part of their balance and dropoff because they can't afford the rest. If we promote payment plans, we can expect more patients paying off their full balance over time.&nbsp;</p></div><div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">+18.8%</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">payment plan conversion</div>
           </div>
           <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
-            <div style="font-size:26px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">+4.2%</div>
-            <div style="font-size:13.5px;color:{{ textSecondary }};font-weight:500;margin-top:2px">overall payment conversion</div>
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">+4.2%</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">overall payment conversion</div>
           </div>
           
         </div>
       </div>
 
-      <div style="margin:16px 0 0;font-size:16px;line-height:1.7;color:{{ textSecondary }}"><b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;">Started with a minimal viable test</b><br><div style="color: #6B6560">This idea actually came from the client. To establish credibility fast, we launched a simple one-off email to patients with outstanding balances who'd made a partial payment in the last month educating them on payment plans.&nbsp; After 30 days, results weren't stat sig but showed positive signal.</div></div>
+      <div style="margin:16px 0 0;font-size:18px;line-height:1.7;color:{{ textSecondary }}"><b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;">Started with a minimal viable test</b><br><div style="color: {{ textSecondary }}">This idea actually came from the client. To establish credibility fast, we launched a simple one-off email to patients with outstanding balances who'd made a partial payment in the last month educating them on payment plans.&nbsp; After 30 days, results weren't stat sig but showed positive signal.</div></div>
 
       <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap;padding:8px 0 4px">
         <img src="./assets/exp1-mvt-email-cropped.png" style="width:230px;max-width:100%;height:auto;border-radius:20px;box-shadow:0 24px 50px rgba(130,110,170,0.18);flex-shrink:1"><div style="flex:1;min-width:220px;display:flex;flex-direction:column;gap:20px">
           <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:24px 26px 18px">
-            <div style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};margin-bottom:18px">Engagement funnel — all users</div>
+            <div style="font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};margin-bottom:18px">Engagement funnel — all users</div>
             <div style="display:flex;align-items:flex-end;gap:14px;height:150px">
               <sc-for list="{{ funnel }}" as="f" hint-placeholder-count="5">
                 <div style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;flex:1;height:100%">
@@ -252,7 +252,7 @@
                 <div style="flex:1;text-align:center;font-size:11.5px;line-height:1.3;color:{{ textSecondary }}">{{ f.label }}</div>
               </sc-for>
             </div>
-          </div><div style="color: #6B6560">1.5x more likely to create a payment plan than control.</div>
+          </div><div style="color: #4A4A45">1.5x more likely to create a payment plan than control.</div>
 
           <div>
             
@@ -266,7 +266,7 @@
         </div>
       </div>
 
-      <b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;">Scaling + other moments to recommend payment plans</b><div style="margin:0;font-size:16px;line-height:1.7;color:{{ textSecondary }}"><div>I saw an opportunity to recommend payment plans to patients earlier in their journey, while they were making the partial payment. After getting client buy-in for this idea, I worked with engineering to add a nudge in our partial payment checkout flow to recommend payment plans to patients. This nudge is dynamic and tries to match patients with a plan based on the amount entered.<br></div></div>
+      <b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;">Scaling + other moments to recommend payment plans</b><div style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}"><div style="color: {{ textSecondary }}">I saw an opportunity to recommend payment plans to patients earlier in their journey, while they were making the partial payment. After getting client buy-in for this idea, I worked with engineering to add a nudge in our partial payment checkout flow to recommend payment plans to patients. This nudge is dynamic and tries to match patients with a plan based on the amount entered.<br></div></div>
 
       <div style="display:flex;gap:20px;flex-wrap:wrap;align-items:stretch;margin-bottom:16px">
         <img src="./uploads/PP nudge flow.gif" style="flex:1;min-width:240px;max-width:100%;height:600px;object-fit:contain;border-radius:20px">
@@ -287,51 +287,51 @@
 
       
 
-      <div><span style="color: rgb(107, 101, 96); font-size: 16px;">We also scaled the one-off email into a proper email that aligned with patient's existing comms cadence.&nbsp;</span></div>
+      <div><span style="color: {{ textSecondary }}; font-size: 18px; line-height: 1.7">We also scaled the one-off email into a proper email that aligned with patient's existing comms cadence.&nbsp;</span></div>
 
       <img src="./assets/exp1-scaled-email-annotated2.png" style="max-width:100%;width:auto;max-height:480px;height:auto;margin:8px auto 4px;display:block;border-radius:20px">
 
-      <b style="font-size: 19px; color: rgb(0, 0, 0); line-height: 1.2;">Final results</b><span style="color: rgb(107, 101, 96); font-size: 16px;">The final version of the nudge held up: <b>+18.8% payment plan conversion and +4.2% overall payment conversion, both stat sig.</b> We rolled it out as a general enhancement for all clients.</span><div style="display:flex;flex-direction:column;gap:20px;margin-top:8px">
+      <b style="font-size:24px;color:{{ textPrimary }};line-height:1.25;">Final results</b><span style="color: {{ textSecondary }}; font-size: 18px; line-height: 1.7">The final version of the nudge held up: <b style="font-weight: 400; color: {{ textSecondary }}">+18.8% payment plan conversion and +4.2% overall payment conversion, both stat sig.</b> We rolled it out as a general enhancement for all clients.</span><div style="display:flex;flex-direction:column;gap:20px;margin-top:8px">
         
         
       </div>
       
-    </div>
+    </div></div>
 
     
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">Team enablement with AI</h2>
-      <p style="margin:0 0 16px;font-size:17px;line-height:1.75;color:{{ textSecondary }}">This project established a repeatable experimentation process that was later adopted into other personalization-focused initiatives. To enable the broader Product team, I created these resources:</p>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Team enablement with AI</h2>
+      <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">This project established a repeatable experimentation process that was later adopted into other personalization-focused initiatives. To enable the broader Product team, I created these resources:</p>
       <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px">
-        <li style="font-size:16px;line-height:1.6;color:{{ textSecondary }}">A designer's manual for comms personalization</li>
-        <li style="font-size:16px;line-height:1.6;color:{{ textSecondary }}">Claude skills for writing product emails and text messages so non-designers could create comms that aligned with our copy principles and guidelines.</li>
-        <li style="font-size:16px;line-height:1.6;color:{{ textSecondary }}">Legal x Data documentation, collaborating with Legal team to outlines dos/don't around showing patient data in comms and other unauthenticated states. This later enabled a Legal Agent that enables makers to get product changes reviewed over Slack in minutes as opposed to the previous 1-week turnaround.&nbsp;</li>
+        <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">A designer's manual for comms personalization</li>
+        <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">Claude skills for writing product emails and text messages so non-designers could create comms that aligned with our copy principles and guidelines.</li>
+        <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">Legal x Data documentation, collaborating with Legal team to outlines dos/don't around showing patient data in comms and other unauthenticated states. This later enabled a Legal Agent that enables makers to get product changes reviewed over Slack in minutes as opposed to the previous 1-week turnaround.&nbsp;</li>
       </ul>
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-size:26px;font-weight:700;letter-spacing:-0.01em">The outcome</h2>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The outcome</h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
           <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }};margin-bottom:4px" dangerouslySetInnerHTML="{{ trophyIcon }}"></div>
-          <div style="font-size:30px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">+24%</div>
-          <div style="font-size:14px;color:{{ textSecondary }};font-weight:500;margin-top:6px;line-height:1.4">Collections rate,<br>outperforming Epic</div>
+          <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">+24%</div>
+          <div style="font-size: 16px; color: {{ textSecondary }}; font-weight: 400; margin-top: 6px; line-height: 1.4">Collections rate,<br>outperforming Epic</div>
         </div>
         <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
           <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }};margin-bottom:4px" dangerouslySetInnerHTML="{{ flaskIcon }}"></div>
-          <div style="font-size:30px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">25+</div>
-          <div style="font-size:14px;color:{{ textSecondary }};font-weight:500;margin-top:6px;line-height:1.4">Experiments shipped <br>in 5 months</div>
+          <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">25+</div>
+          <div style="font-size: 16px; color: {{ textSecondary }}; font-weight: 400; margin-top: 6px; line-height: 1.4">Experiments shipped <br>in 5 months</div>
         </div>
         <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
           <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }};margin-bottom:4px" dangerouslySetInnerHTML="{{ handshakeIcon }}"></div>
-          <div style="font-size:30px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">$75M</div>
-          <div style="font-size:14px;color:{{ textSecondary }};font-weight:500;margin-top:6px;line-height:1.4">Revenue secured <br>(3-yr, $25M/yr renewal)</div>
+          <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">$75M</div>
+          <div style="font-size:14px;color:{{ textSecondary }};font-weight:400;margin-top:6px;line-height:1.4"><span style="font-size: 16px">3-yr contract renewal, $25M/yr)</span></div>
         </div>
       </div>
     </div>
 
-    <a href="./index.html" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
+    <a href="/" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
   </section>
 </div>
 
@@ -348,7 +348,7 @@ class Component extends DCLogic {
       closeMobileMenu,
       bgColor: '#FCFAF7',
       textPrimary: '#1A1A1A',
-      textSecondary: '#6B6560',
+      textSecondary: '#4A4A45',
       navLinkStyle: { transition: 'color .15s' },
       accentColor: '#7C3AED',
       accentSoft: 'rgba(124,58,237,0.12)',
@@ -360,7 +360,7 @@ class Component extends DCLogic {
         { title: 'Insured patients with big bills', desc: 'Make up 16% of the patient population, but 46% of the client\'s annual revenue. ', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>' } },
       ],
       mvtInsights: [
-        { title: 'Advising on payment options benefited patients from all bill sizes.', desc: '+15.7% payments for big bills\n+6.7% payments for small bills', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2"/><path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2"/><path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3"/></svg>' } },
+        { title: 'Patients across balance sizes found payment recommendations helpful.', desc: '+15.7% payments for big bills\n+6.7% payments for small bills', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14.66V17a1 1 0 0 1-1 1 2 2 0 0 0-2 2v2"/><path d="M14 14.66V17a1 1 0 0 0 1 1 2 2 0 0 1 2 2v2"/><path d="M17.916 10H19.5A2.5 2.5 0 0 0 22 7.5V5a1 1 0 0 0-1-1h-3"/><path d="M4 22h16"/><path d="M6 9a6 6 0 0 0 12 0V3a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1z"/><path d="M6.084 10H4.5A2.5 2.5 0 0 1 2 7.5V5a1 1 0 0 1 1-1h3"/></svg>' } },
         { title: 'Pay-over-time options converted those who would\'ve otherwise not paid.', desc: '+8.6% partial pay, +6.5% payment plans,\nNo decline in total payments', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z"/><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/></svg>' } },
       ],
       scalingScenarios: [
@@ -402,7 +402,7 @@ class Component extends DCLogic {
       headlineMetrics: [
         { value: '+24%', label: 'Collections rate, outperforming Epic' },
         { value: '25+', label: 'Experiments shipped in 5 months' },
-        { value: '$75M', label: 'Revenue secured (3-yr, $25M/yr renewal)' },
+        { value: '$75M', label: '3-yr contract renewal, $25M/yr)' },
       ],
       facts: [
         { k: 'Company', v: 'Cedar' },

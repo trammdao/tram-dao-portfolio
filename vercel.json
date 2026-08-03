@@ -1,3 +1,8 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.dc.html" },
+    { "source": "/code-yellow", "destination": "/code-yellow.dc.html" },
+    { "source": "/resume", "destination": "/Resume.dc.html" }
+  ]
 }

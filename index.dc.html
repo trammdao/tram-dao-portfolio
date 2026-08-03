@@ -10,7 +10,7 @@
 <x-dc>
 <helmet data-dc-atomics="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet">
 <style>
   body{margin:0;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
@@ -29,7 +29,7 @@
   }
 </style>
 </helmet>
-<div style="position:relative;min-height:100vh;background:{{ bgColor }};overflow:hidden;font-family:'Plus Jakarta Sans',sans-serif;color:{{ textPrimary }}">
+<div style="position:relative;min-height:100vh;background:{{ bgColor }};overflow:hidden;font-family:'Inter',sans-serif;color:{{ textPrimary }}">
 
   <svg style="position:absolute;top:0;left:0;width:100%;height:900px;opacity:0.32;mix-blend-mode:overlay;pointer-events:none;z-index:0">
     <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 1 0"></feColorMatrix></filter>
@@ -43,14 +43,14 @@
   <div style="position:absolute;top:2500px;left:10%;width:560px;height:560px;border-radius:50%;background:{{ blobPeach }};filter:blur(150px);opacity:{{ blobOpacity }};animation:floatB 28s ease-in-out infinite;pointer-events:none"></div>
 
   <nav style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:rgba(255,255,255,0.55);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.6)">
-    <a href="./index.html" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
+    <a href="/" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
       <span>Tram Dao</span>
     </a>
-    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:500;color:{{ textSecondary }}">
-      <a href="#work" style="{{ navLinkStyle }}">Work</a>
-      <a href="#about" style="{{ navLinkStyle }}">About</a>
-      <a href="#contact" style="{{ navLinkStyle }}">Contact</a>
-      <a href="./Resume.dc.html" style="{{ navLinkStyle }}">Resume</a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:400;color:{{ textSecondary }}">
+      <a href="/#work" style="{{ navLinkStyle }}">Work</a>
+      <a href="/#about" style="{{ navLinkStyle }}">About</a>
+      <a href="/#contact" style="{{ navLinkStyle }}">Contact</a>
+      <a href="/resume" style="{{ navLinkStyle }}">Resume</a>
     </div>
     <button class="nav-hamburger" onClick="{{ toggleMobileMenu }}" aria-label="Open menu" style="align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);cursor:pointer">
       <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="2" y1="5" x2="18" y2="5"></line><line x1="2" y1="10" x2="18" y2="10"></line><line x1="2" y1="15" x2="18" y2="15"></line></svg>
@@ -64,33 +64,33 @@
           <svg width="16" height="16" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="3" x2="17" y2="17"></line><line x1="17" y1="3" x2="3" y2="17"></line></svg>
         </button>
       </div>
-      <a href="#work" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Work</a>
-      <a href="#about" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">About</a>
-      <a href="#contact" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:600;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Contact</a>
-      <a href="./Resume.dc.html" style="font-size:24px;font-weight:600;padding:18px 0;color:{{ textPrimary }}">Resume</a>
+      <a href="/#work" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Work</a>
+      <a href="/#about" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">About</a>
+      <a href="/#contact" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Contact</a>
+      <a href="/resume" style="font-size:24px;font-weight:700;padding:18px 0;color:{{ textPrimary }}">Resume</a>
     </div>
   </sc-if>
 
   <section style="position:relative;z-index:1;max-width:920px;margin:0 auto;padding:120px 32px 100px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:26px">
-    <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);font-size:13px;font-weight:600;color:{{ textSecondary }};box-shadow:0 8px 24px rgba(140,120,180,0.1)">
+    <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);font-size:14px;font-weight:400;color:{{ textSecondary }};box-shadow:0 8px 24px rgba(140,120,180,0.1)">
       <span style="width:7px;height:7px;border-radius:50%;background:{{ accentColor }}"></span>
       Open to new opportunities
     </div>
     
-    <h1 class="hero-h1" style="margin:0;font-size:56px;line-height:1.12;font-weight:700;letter-spacing:-0.02em">
+    <h1 class="hero-h1" style="margin:0;font-family:'Montserrat',sans-serif;font-size:44px;line-height:1.15;font-weight:700;letter-spacing:-0.02em">
       Hi, I'm Tram!<br><span style="display:inline-block;color: rgb(124, 58, 237); letter-spacing: -0.02em;opacity:{{ roleOpacity }};transition:opacity .3s ease">{{ roleWord }}</span><br>who turns complex systems into clear, <font color="#7c3aed" style="color: #000000">human&nbsp;</font>experiences.
-    </h1><p style="margin:0;font-size:19px;line-height:1.6;color:{{ textSecondary }};max-width:620px;font-weight:500">
+    </h1><p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }};max-width:620px;font-weight:400">
       Currently Staff Product Designer at <a href="https://www.cedar.com/" target="_blank" style="color: rgb(124, 58, 237); text-decoration: underline;">Cedar</a>. Previously at <a href="https://www.hubspot.com/" target="_blank" style="color: rgb(124, 58, 237); text-decoration: underline;">HubSpot</a>.
     </p>
     <div style="display:flex;gap:14px;margin-top:8px">
-      <a href="#work" style="padding:14px 26px;border-radius:999px;background:{{ textPrimary }};color:{{ bgColor }};font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px">Featured work ↓</a>
-      <a href="#about" style="padding:14px 26px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px">About me →</a>
+      <a href="/#work" style="padding:14px 26px;border-radius:999px;background:{{ textPrimary }};color:{{ bgColor }};font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px">Featured work ↓</a>
+      <a href="/#about" style="padding:14px 26px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px">About me →</a>
     </div>
   </section>
 
   <section id="work" style="position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:40px 32px 60px">
     <div style="margin-bottom:36px">
-      <h2 style="margin:0;font-size:34px;font-weight:700;letter-spacing:-0.01em">Featured work</h2>
+      <h2 style="margin:0;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Featured work</h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:24px">
       <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
@@ -102,13 +102,13 @@
                 <span style="font-size:13px;font-weight:600;color:{{ textPrimary }};background:transparent;border:1.5px solid rgba(0,0,0,0.15);padding:6px 15px;border-radius:999px">{{ tag }}</span>
               </sc-for>
             </div>
-            <h3 style="margin:0;font-size:30px;line-height:1.2;font-weight:700;letter-spacing:-0.01em">{{ p.title }}</h3>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:{{ textSecondary }}">{{ p.desc }}</p>
+            <h3 style="margin:0;font-family:'Montserrat',sans-serif;font-size:32px;line-height:1.2;font-weight:700;letter-spacing:-0.015em">{{ p.title }}</h3>
+            <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">{{ p.desc }}</p>
             <div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:6px">
               <sc-for list="{{ p.stats }}" as="stat" hint-placeholder-count="2">
                 <div>
-                  <div style="font-size:26px;font-weight:800;color:{{ accentColor }};letter-spacing:-0.01em">{{ stat.value }}</div>
-                  <div style="font-size:13px;color:{{ textSecondary }};font-weight:500;margin-top:2px">{{ stat.label }}</div>
+                  <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ stat.value }}</div>
+                  <div style="font-size:14px;color:{{ textSecondary }};font-weight:400;margin-top:2px">{{ stat.label }}</div>
                 </div>
               </sc-for>
             </div>
@@ -130,24 +130,24 @@
     <div class="about-card" style="border-radius:28px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 20px 50px rgba(130,110,170,0.1);padding:52px 56px;display:flex;gap:40px;align-items:flex-start">
       <img class="about-photo" src="./assets/tram-photo.png" alt="Tram Dao" style="width:140px;height:140px;border-radius:50%;object-fit:cover;flex-shrink:0;box-shadow:0 12px 30px rgba(130,110,170,0.2)">
       <div style="min-width:0">
-        <p style="margin:0 0 14px;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:{{ accentColor }}">More about me</p>
-        <h2 style="margin:0 0 20px;font-size:30px;font-weight:700;letter-spacing:-0.01em;max-width:640px">I started my career in Support and Sales where I studied how people buy and use products. Now, I channel that customer empathy into designing clear, human experiences.</h2>
-        <div style="margin:0;font-size:17px;line-height:1.75;color:{{ textSecondary }};max-width:680px">
+        <p style="margin:0 0 14px;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:{{ accentColor }}">More about me</p>
+        <h2 style="margin:0 0 20px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em;max-width:640px">I started my career in Support and Sales where I studied how people buy and use products. Now, I channel that customer empathy into designing clear, human experiences.</h2>
+        <div style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }};max-width:680px">
         <p dir="auto" class="framer-styles-preset-elknxf" data-styles-preset="oV_Qzyeui" data-pm-slice="1 1 []">I'm currently a Staff Product Designer at Cedar, where I design solutions to make healthcare billing more affordable and uncomplicated for patients.</p><p dir="auto" class="framer-styles-preset-elknxf" data-styles-preset="oV_Qzyeui">Outside of work, I enjoy obsessing over sewing patterns, exploring Brooklyn on my bike, and hanging out with my two cats.</p></div>
       </div>
     </div>
   </section>
 
   <section style="position:relative;z-index:1;max-width:900px;margin:0 auto;padding:20px 32px 80px">
-    <p style="text-align:center;margin:0 0 22px;font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:{{ textSecondary }}">Where I've worked</p>
+    <p style="text-align:center;margin:0 0 22px;font-size:14px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:{{ textSecondary }}">Where I've worked</p>
     <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
       <sc-for list="{{ experience }}" as="job" hint-placeholder-count="3">
         <div style="display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:16px;background:rgba(255,255,255,0.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 12px 30px rgba(130,110,170,0.08)">
-          <sc-if value="{{ job.url }}"><a href="{{ job.url }}" target="_blank" style="font-weight:700;font-size:15px;color:{{ textPrimary }}">{{ job.company }}</a></sc-if>
-          <sc-if value="{{ job.noUrl }}"><span style="font-weight:700;font-size:15px">{{ job.company }}</span></sc-if>
+          <sc-if value="{{ job.url }}"><a href="{{ job.url }}" target="_blank" style="font-weight:700;font-size:14px;color:{{ textPrimary }}">{{ job.company }}</a></sc-if>
+          <sc-if value="{{ job.noUrl }}"><span style="font-weight:700;font-size:14px">{{ job.company }}</span></sc-if>
           <span style="width:4px;height:4px;border-radius:50%;background:{{ textSecondary }}"></span>
-          <span style="font-size:14px;color:{{ textSecondary }};font-weight:500">{{ job.role }}</span>
-          <span style="font-size:13px;color:{{ textSecondary }};font-weight:500;opacity:0.7">{{ job.years }}</span>
+          <span style="font-size:14px;color:{{ textSecondary }};font-weight:400">{{ job.role }}</span>
+          <span style="font-size:14px;color:{{ textSecondary }};font-weight:400;opacity:0.7">{{ job.years }}</span>
         </div>
       </sc-for>
     </div>
@@ -155,15 +155,15 @@
 
   <section id="contact" style="position:relative;z-index:1;max-width:760px;margin:0 auto;padding:20px 32px 140px;text-align:center">
     <div style="border-radius:28px;background:linear-gradient(135deg, rgba(228,203,255,0.5), rgba(255,221,194,0.5)), rgba(255,255,255,0.5);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 24px 60px rgba(130,110,170,0.15);padding:56px 48px;display:flex;flex-direction:column;align-items:center;gap:22px">
-      <h2 style="margin:0;font-size:32px;font-weight:700;letter-spacing:-0.01em">Let's work together</h2>
-      <p style="margin:0;font-size:16px;color:{{ textSecondary }};max-width:440px;line-height:1.6">Open to new roles and selected projects.</p>
+      <h2 style="margin:0;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Let's work together</h2>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }};max-width:440px">Open to new roles and selected projects.</p>
       <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:6px">
         <a href="mailto:trammdao@gmail.com" style="padding:14px 26px;border-radius:999px;background:{{ textPrimary }};color:{{ bgColor }};font-weight:600;font-size:15px">trammdao@gmail.com</a>
         <a href="https://www.linkedin.com/in/tramdao/" style="padding:14px 26px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:15px">LinkedIn ↗</a>
-        <a href="./Resume.dc.html" style="padding:14px 26px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:15px">View resume →</a>
+        <a href="/resume" style="padding:14px 26px;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);color:{{ textPrimary }};font-weight:600;font-size:15px">View resume →</a>
       </div>
     </div>
-    <p style="margin:40px 0 0;font-size:13px;color:{{ textSecondary }};opacity:0.7">© 2026 Tram Dao. Designed with care.</p>
+    <p style="margin:40px 0 0;font-size:14px;color:{{ textSecondary }};opacity:0.7">© 2026 Tram Dao. Designed with care.</p>
   </section>
 </div>
 
@@ -203,7 +203,7 @@ class Component extends DCLogic {
       roleOpacity: this.state.roleOpacity,
       bgColor: '#FCFAF7',
       textPrimary: '#1A1A1A',
-      textSecondary: '#6B6560',
+      textSecondary: '#4A4A45',
       accentColor,
       navLinkStyle: { transition: 'color .15s' },
       blobOpacity: this.props.blobIntensity === 'bold' ? 0.75 : 0.62,
@@ -212,9 +212,9 @@ class Component extends DCLogic {
       blobSky: '#E4CBFF',
       blobBlush: '#FFDDC2',
       projects: [
-        { org: 'Cedar', rowDirection: 'row', title: 'Code Yellow: Outperforming Epic to save a $25M client', tags: ['Payments', 'Experimentation'], desc: 'Cedar\u2019s biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response: Rapid comms experiments focused on helping patients better manage and pay their medical bills.', stats: [{ value: '+24%', label: 'collections rate vs. Epic, securing the renewal' }, { value: '25+', label: 'experiments shipped in 5 months' }], caseStudyUrl: './code-yellow.html', showLink: true, image: './uploads/pasted-1785706154010-0.png' },
+        { org: 'Cedar', rowDirection: 'row', title: 'Code Yellow: Outperforming Epic to save a $25M client', tags: ['Payments', 'Experimentation'], desc: 'Cedar\u2019s biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response: Rapid comms experiments focused on helping patients better manage and pay their medical bills.', stats: [{ value: '+24%', label: 'collections rate vs. Epic, securing the renewal' }, { value: '25+', label: 'experiments shipped in 5 months' }], caseStudyUrl: '/code-yellow', showLink: true, image: './uploads/pasted-1785706154010-0.png' },
         { org: 'Cedar', rowDirection: 'row', title: 'Integrating with HealthEquity to make it easier to use HSA/FSA funds', tags: ['Payments Integration'], desc: '30% of Americans have a health savings account, but many forget these funds exist. To reduce friction and make it easier to pay medical bills, Cedar integrated with HealthEquity, one of the largest HSA/FSA banks in the country. I design the E2E patient experience.', stats: [{ value: '+5%', label: 'collections rate ($1.5M/yr w/ first client)' }, { value: '33%', label: 'more likely to use HSA/FSA when surfaced' }], comingSoon: true, showLink: false, caseStudyUrl: '#', image: './uploads/pasted-1785706198510-0.png' },
-        { org: 'Cedar', rowDirection: 'row', title: 'Proving value of insurance-powered features before a medical visit', tags: ['UX Research'], desc: React.createElement(React.Fragment, null, 'We wanted to understand if showing patients more information about their insurance before a visit (while viewing an estimate rather than a final bill) would change patient behavior. I led unmoderated testing with 15 patients to uncover low-lift opportunities: ', React.createElement('em', null, 'surfacing HSA/FSA balances to alleviate visit anxiety and insurance details to build confidence/comprehension in estimates'), '.'), stats: [{ value: '11/15', label: 'more likely to open estimate seeing HSA/FSA balance' }, { value: '13/15', label: 'said breakdown & insurance details built confidence to pay' }], comingSoon: true, showLink: false, caseStudyUrl: '#', image: './uploads/pasted-1785709731146-0.png' },
+        { org: 'Cedar', rowDirection: 'row', title: 'Proving value of insurance-powered features before a medical visit', tags: ['UX Research'], desc: 'We wanted to understand if showing patients more information about their insurance before a visit (while viewing an estimate rather than a final bill) would change patient behavior. I led unmoderated testing with 15 patients to uncover low-lift opportunities: surfacing HSA/FSA balances to alleviate visit anxiety and insurance details to build confidence/comprehension in estimates.', stats: [{ value: '11/15', label: 'more likely to open estimate seeing HSA/FSA balance' }, { value: '13/15', label: 'said breakdown & insurance details built confidence to pay' }], comingSoon: true, showLink: false, caseStudyUrl: '#', image: './uploads/pasted-1785709731146-0.png' },
       ],
       experience: [
         { company: 'Cedar', role: 'Staff Product Designer', years: '2021–Now', url: 'https://www.cedar.com/', logo: './assets/logo-cedar.png' },

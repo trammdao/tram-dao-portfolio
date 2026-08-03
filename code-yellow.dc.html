@@ -17,7 +17,16 @@
   @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
   @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-24px,26px)}}
   .nav-hamburger{display:none}
+  .cs-alice-row{display:flex;align-items:center;justify-content:center;padding:20px 0;width:100%}
+  .cs-brainstorm-row{display:flex;align-items:center;justify-content:center;padding:20px 0}
+  .cs-concepts-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:12px}
   @media (max-width:900px){
+    .cs-concepts-row{display:flex !important;flex-wrap:wrap;justify-content:center}
+    .cs-concepts-row img{flex:0 0 calc(33.333% - 11px);max-width:calc(33.333% - 11px)}
+    .cs-alice-row{flex-direction:column;gap:16px}
+    .cs-alice-row img{width:70% !important;max-width:70% !important;margin:0 !important;transform:none !important}
+    .cs-brainstorm-row{flex-direction:column;gap:16px}
+    .cs-brainstorm-row img{width:85% !important;margin:0 !important;transform:none !important}
     .cs-metrics{grid-template-columns:1fr !important}
     .cs-facts{grid-template-columns:repeat(2,1fr) !important}
     .cs-grid2{grid-template-columns:1fr !important}
@@ -137,7 +146,7 @@
       <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Understanding these patients shaped how I approached communicating with these patients: Rather than transaction ("here's what you owe"), comms needed to be supportive and directive in helping patients find affordable solutions for managing their rising healthcare costs.&nbsp;</p>
 
       
-      <div style="display:flex;align-items:center;justify-content:center;padding:20px 0;width:100%">
+      <div class="cs-alice-row" style="display:flex;align-items:center;justify-content:center;padding:20px 0;width:100%">
         <img src="./assets/alice-slide-4.png" style="width:38%;max-width:38%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-5deg);position:relative;z-index:1;margin-right:-4%">
         <img src="./assets/alice-slide-5.png" style="width:36%;max-width:36%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(2deg);position:relative;z-index:2">
         <img src="./assets/alice-slide-6.png" style="width:24%;max-width:24%;height:auto;border-radius:12px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-3deg);position:relative;z-index:3;margin-left:-4%">
@@ -149,11 +158,17 @@
       <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Brainstorming comms for ALICE patients</h2>
       <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I ran ALICE x Comms brainstorm sessions with the cross-functional project team and the Design team, working from the question: how might we personalize these communications so patients feel more supported in managing and paying their bills? That produced a handful of directions that I then partnered with UXR to concept test with ALICE-lookalike patients.&nbsp;</p>
 
-      <div style="display:flex;align-items:center;justify-content:center;padding:20px 0">
+      <div class="cs-brainstorm-row" style="display:flex;align-items:center;justify-content:center;padding:20px 0">
         <img src="./assets/brainstorm-board-1.png" style="width:55%;border-radius:16px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(-4deg);position:relative;z-index:1;margin-right:-6%">
         <img src="./assets/brainstorm-board-2.png" style="width:55%;border-radius:16px;box-shadow:0 20px 44px rgba(130,110,170,0.2);transform:rotate(3deg);position:relative;z-index:2">
       </div>
-      <img src="./assets/alice-concepts-tested.png" style="width:100%;border-radius:16px;margin-top:12px">
+      <div class="cs-concepts-row" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:12px">
+        <img src="./uploads/insurance.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18)">
+        <img src="./uploads/prebill.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18)">
+        <img src="./uploads/social proof.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18)">
+        <img src="./uploads/tailored plans.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18)">
+        <img src="./uploads/tips from staff.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18)">
+      </div>
       <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:{{ textSecondary }};text-align:center;font-style:italic">Comms concepts that we tested with look alike ALICE patients.</p>
     </div>
 

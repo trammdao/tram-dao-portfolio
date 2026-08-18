@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  body{margin:0;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  @keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-20px)}}
+  @keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-24px,26px)}}
+  .nav-hamburger{display:none}
+  .cs-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+  @media (max-width:900px){
+    .cs-grid5{grid-template-columns:repeat(2,1fr) !important}
+    .cs-metrics{grid-template-columns:1fr !important}
+    .cs-facts{grid-template-columns:repeat(2,1fr) !important}
+    .cs-grid2{grid-template-columns:1fr !important}
+    .cs-grid3{grid-template-columns:1fr !important}
+    .cs-imgrow{flex-direction:column !important}
+    .cs-imgrow img,.cs-imgrow>div{height:auto !important;width:100% !important}
+    .nav-links{display:none !important}
+    .nav-hamburger{display:flex !important}
+    .cs-title{font-size:34px !important}
+  }
+</style>
+</helmet>
+<div style="position:relative;min-height:100vh;background:{{ bgColor }};overflow:hidden;font-family:'Inter',sans-serif;color:{{ textPrimary }}">
+
+  <svg style="position:absolute;top:0;left:0;width:100%;height:900px;opacity:0.32;mix-blend-mode:overlay;pointer-events:none;z-index:0">
+    <filter id="grain2"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="matrix" values="0 0 0 0 0, 0 0 0 0 0, 0 0 0 0 0, 0 0 0 1 0"></feColorMatrix></filter>
+    <rect width="100%" height="100%" filter="url(#grain2)"></rect>
+  </svg>
+  <div style="position:absolute;top:-220px;left:-180px;width:720px;height:720px;border-radius:50%;background:{{ blobBlush }};filter:blur(160px);opacity:{{ blobOpacity }};animation:floatA 22s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:absolute;top:200px;left:15%;width:600px;height:600px;border-radius:50%;background:{{ blobPeach }};filter:blur(160px);opacity:{{ blobOpacity }};animation:floatB 20s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:absolute;top:-100px;right:-220px;width:700px;height:700px;border-radius:50%;background:{{ blobLavender }};filter:blur(150px);opacity:{{ blobOpacity }};animation:floatB 26s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:absolute;top:1000px;left:-240px;width:680px;height:680px;border-radius:50%;background:{{ blobSky }};filter:blur(150px);opacity:{{ blobOpacity }};animation:floatB 30s ease-in-out infinite;pointer-events:none"></div>
+  <div style="position:absolute;top:1900px;right:-200px;width:600px;height:600px;border-radius:50%;background:{{ blobLavender }};filter:blur(140px);opacity:{{ blobOpacity }};animation:floatA 24s ease-in-out infinite;pointer-events:none"></div>
+
+  <nav style="position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;background:rgba(255,255,255,0.55);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,0.6)">
+    <a href="/" style="display:flex;align-items:baseline;gap:8px;font-weight:700;font-size:16px;letter-spacing:-0.01em;color:{{ textPrimary }};white-space:nowrap;flex-shrink:0">
+      <span>Tram Dao</span>
+    </a>
+    <div class="nav-links" style="display:flex;align-items:center;gap:36px;font-size:14px;font-weight:400;color:{{ textSecondary }}">
+      <a href="/#work" style="{{ navLinkStyle }}">Work</a>
+      <a href="/#about" style="{{ navLinkStyle }}">About</a>
+      <a href="/#contact" style="{{ navLinkStyle }}">Contact</a>
+      <a href="/resume" style="{{ navLinkStyle }}">Resume</a>
+    </div>
+    <button class="nav-hamburger" onClick="{{ toggleMobileMenu }}" aria-label="Open menu" style="align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);cursor:pointer">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="2" y1="5" x2="18" y2="5"></line><line x1="2" y1="10" x2="18" y2="10"></line><line x1="2" y1="15" x2="18" y2="15"></line></svg>
+    </button>
+  </nav>
+  <sc-if value="{{ mobileMenuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;inset:0;z-index:30;background:rgba(252,250,247,0.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;padding:24px 32px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:40px">
+        <span style="font-weight:700;font-size:16px">Tram Dao</span>
+        <button onClick="{{ toggleMobileMenu }}" aria-label="Close menu" style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;cursor:pointer">
+          <svg width="16" height="16" viewBox="0 0 20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="3" x2="17" y2="17"></line><line x1="17" y1="3" x2="3" y2="17"></line></svg>
+        </button>
+      </div>
+      <a href="/#work" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Work</a>
+      <a href="/#about" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">About</a>
+      <a href="/#contact" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;border-bottom:1px solid rgba(0,0,0,0.06);color:{{ textPrimary }}">Contact</a>
+      <a href="/resume" onClick="{{ closeMobileMenu }}" style="font-size:24px;font-weight:700;padding:18px 0;color:{{ textPrimary }}">Resume</a>
+    </div>
+  </sc-if>
+
+  <section style="position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:40px 32px 0">
+    <div style="border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(130,110,170,0.15);height:420px;background-image:url('./uploads/pasted-1785969421862-0.png');background-size:cover;background-position:center"></div>
+  </section>
+
+  <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:56px 32px 40px">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px">
+      <span style="font-size:13px;font-weight:600;color:white;background:{{ textPrimary }};padding:7px 16px;border-radius:999px">Cedar</span>
+      <span style="font-size:13px;font-weight:600;color:{{ textPrimary }};border:1.5px solid rgba(0,0,0,0.15);padding:6px 15px;border-radius:999px">Payments Integration</span>
+    </div>
+    <h1 class="cs-title" style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:38px;line-height:1.2;font-weight:700;letter-spacing:-0.02em">Integrating with HealthEquity to make it easier to use HSA/FSA funds</h1>
+  </section>
+
+  <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:0 32px 40px">
+    <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:20px 32px 40px">
+      <div class="cs-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ headlineMetrics }}" as="m" hint-placeholder-count="3">
+          <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ m.value }}</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:6px;line-height:1.4">{{ m.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <div style="border-radius:20px;background:rgba(255,255,255,0.5);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.8);padding:28px 32px">
+      <div class="cs-facts" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px 24px">
+        <sc-for list="{{ facts }}" as="f" hint-placeholder-count="6">
+          <div>
+            <div style="font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }}">{{ f.k }}</div>
+            <div style="font-size:18px;font-weight:400;margin-top:4px;color:{{ textSecondary }}">{{ f.v }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:20px 32px 100px;display:flex;flex-direction:column;gap:56px">
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The situation</h2>
+      <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Cedar already had an integration with <b>Highmark</b>, an insurance company, that showed patients their HSA/FSA balance alongside their medical bill. The results were promising: a <b>33% relative increase in HSA/FSA payments.</b> The problem was reach: It was limited to only a few healthcare providers and a fraction of patients who had Highmark HSA/FSA accounts.</p>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">To increase reach, Cedar partnered with HealthEquity, the largest HSA administrator in the country at 22% of the market. I designed the E2E patient experience, from account activation to utilization.</p>
+    </div>
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Identifying the opportunity</h2>
+      <div class="cs-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px">
+        <sc-for list="{{ opportunityStats }}" as="s" hint-placeholder-count="3">
+          <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ s.value }}</div>
+            <div style="font-size:16px;color:{{ textSecondary }};font-weight:400;margin-top:6px;line-height:1.4">{{ s.label }}</div>
+          </div>
+        </sc-for>
+      </div>
+      
+    </div>
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Designing the MVP</h2>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I worked with my Product Manager and Engineering Manager to scope this MVP down to 3 core pieces.</p>
+      <div class="cs-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ buildingCards }}" as="c" hint-placeholder-count="3">
+          <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:28px;display:flex;flex-direction:column;gap:14px">
+            <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }}" dangerouslySetInnerHTML="{{ c.icon }}"></div>
+            <h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-0.01em">{{ c.title }}</h3>
+            <p style="margin:0;font-size:16px;line-height:1.7;color:{{ textSecondary }}">{{ c.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:32px;margin-top:32px">
+        <div>
+          <h3 style="margin:0 0 10px;font-size:22px;font-weight:700;letter-spacing:-0.01em">Activation/Consent</h3>
+          <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Working with HealthEquity's engineering team, we were able to match their customers to our patients through SSN and other data. This allowed us to target patients who had an account and prompt them to activate their account in two main entrypoints: Bills home page and in billing notifications.</p>
+          
+          <div style="width:100vw;margin-left:calc(50% - 50vw);padding:8px 0 32px">
+            <div style="max-width:840px;margin-left:auto;margin-right:auto;padding:0 32px">
+              <p style="margin: 0 0 16px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}; font-weight: 700; text-align: center; position: relative">Entrypoint #1: Bills home page</p>
+              <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }};text-align:center">Because we knew which patients had an account, we prominently displayed a callout to check their funds on the home page.</p>
+            </div>
+            <div class="cs-grid5" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:1120px;margin-left:auto;margin-right:auto;padding:0 32px">
+            <div>
+              <img src="./uploads/1.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>1. Activation prompt</b><br>Patients with funds are prompted to check it.</span></p>
+            </div>
+            <div>
+              <img src="./uploads/2.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>2. Login</b><br>Patients verify their identity to proceed.</span></p>
+            </div>
+            <div>
+              <img src="./uploads/3.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b style="">3. Getting consent</b><br>Explicit patient consent required to show balances.</span></p>
+            </div>
+            <div>
+              <img src="./uploads/4.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>4. Finding funds</b><br>~1 sec loading state in case there are integration errors.</span></p>
+            </div>
+            <div>
+              <img src="./uploads/pasted-1787085921459-0.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>5. Funds connected!<br></b>Patients see much their funds cover.</span></p>
+            </div>
+          </div>
+          </div>
+          <div style="width:100vw;margin-left:calc(50% - 50vw);padding:32px 0">
+            <div style="max-width:840px;margin-left:auto;margin-right:auto;padding:0 32px">
+              <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }};font-weight:700;text-align:center">Entrypoint #2: First billing notification</p>
+              <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }};text-align:center">Letting patients know about their HSA/FSA funds in the filling billing notification alleviated stress around affordability and primed them for the activation prompt on the home page.</p>
+              <div style="display:flex;flex-direction:column;align-items:center">
+                <img src="./uploads/pasted-1785977954492-0.png" style="max-width: 320px; border-radius: 16px; box-shadow: 0 12px 30px rgba(130,110,170,0.18); display: block; height: 440px">
+                <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 10px;font-size:22px;font-weight:700;letter-spacing:-0.01em">Showing funds</h3>
+          <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I designed the funds component to be flexible enough to handle different account and integration states. For example, if the connected account was a FSA, we prioritized showing the expiration. In another example, if the patient had not yet verified their identify, we prompted them to view their funds rather than show their account details.&nbsp;&nbsp;</p>
+          <div style="width:100vw;margin-left:calc(50% - 50vw);padding:8px 0 32px">
+            <div style="max-width:840px;margin-left:auto;margin-right:auto;padding:0 32px">
+              <img src="./uploads/pasted-1785980857698-0.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 style="margin:0 0 10px;font-size:22px;font-weight:700;letter-spacing:-0.01em">Funds utilization</h3>
+          <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">To get patients to use their HSA and FSA funds, we included callouts in their billing reminders.</p>
+          <div style="width:100vw;margin-left:calc(50% - 50vw);padding:8px 0 32px">
+            <div style="max-width:840px;margin-left:auto;margin-right:auto;padding:0 32px">
+              <img src="./uploads/pasted-1786497622658-0.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:12px 0 24px;font-size:15px;font-style:italic;color:{{ textSecondary }};text-align:center"><span style="font-style: normal;">For HSA accounts, emails called out how much of the bill was covered by the funds.</span></p>
+              <img src="./uploads/pasted-1786497966134-0.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+              <p style="margin:12px 0 0;font-size:15px;font-style:italic;color:{{ textSecondary }};text-align:center"><span style="font-style: normal;">For FSA accounts, emails let patients know when their funds were expiring.</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 100vw; margin-left: calc(50% - 50vw); padding: 48px 0; background-color: #7C3AED0D"><div style="max-width:840px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:18px">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};width:fit-content">MVP LAUNCH</span>
+      <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">Initial results at beta client</h3>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We launched a 50/50 A/B rest with one of our clients: 19k patients in test, 19k in control.</p>
+      <div class="cs-grid2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+        <sc-for list="{{ providenceStats }}" as="p" hint-placeholder-count="4">
+          <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ p.value }}</div>
+            <div style="font-size:16px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">{{ p.label }}</div>
+          </div>
+        </sc-for>
+      </div><div style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Initial results were promising: Comms seem to be a main driver of payment. While 13% of patients consented to showing their balance, we were seeing more patient pay. These patients didn't need to see their balance - Just the reminder of the available funds was enough to get them to use them.<br></div>
+      
+    </div></div>
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Iterating and improving</h2>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Three threads I followed after launching with our beta client: Improving activation, increase FSA utilization, and support card nicknames.&nbsp;</p>
+
+      <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Improving the activation callout on the home page</b>
+      <div style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">A few theories on why patients weren't activating their accounts:<br><ol><li>Patients use their HSA account as an investment account rather than for healthcare.</li><li>Patients weren't ready to pay yet so checking their balance wasn't a priority.&nbsp;</li><li>Patients were unsure of the value of linking their account.</li></ol><div>I decided to focus <b>Theory #3. </b>The current framing phrased linking the account as a question and buried the lead of viewing the account balance. Working with Legal, I got updated copy approve that was more direct and action-oriented.&nbsp;</div></div>
+
+      <img src="./uploads/pasted-1787081414831-0.png" alt="Before and after of the activation callout on the bill home page" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
+
+      <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Improving FSA utilization</b>
+      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}; display: flex; flex-direction: column; gap: 12px">As an FSA-user, I was inspired by emails I received from The FSA Store at the end of year urging my to use my funds before they expire. I wanted to translate this sort of nudge into the healthcare billing context with the added benefit of actually knowing when funds expire through HealthEquity. To test this idea, I built the email using a low code internal email editor, got buy-in from a few client managers to launch this email as a one-off test, and collabed with a data scientist to interpret the results<br></p>
+      <img src="./uploads/pasted-1787080176427-0.png" alt="Inspo vs. experiment comparison for the FSA expiration email" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
+
+      <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Card nicknames</b>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Patient survey comments kept surfacing the same confusion: Patients with saved HSA/FSA cards didn't recognize them from the last 4 digits alone. Ideally, in the future, we would be able to pull these automatically in automatically for patients through HealthEquity. In the meantime, I designed a way for patients to add a card nickname for saved payment methods.&nbsp;</p>
+      <img src="./uploads/pasted-1787086021613-0.png" alt="Adding a card nickname, then seeing it preselected at the next payment" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
+      
+      
+
+
+      
+      
+      
+    </div>
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Scaling it into a system</h2>
+      <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}">As we scaled HealthEquity and integrated with other partners, we needed to start thinking about our HSA/FSA feature set as a system.&nbsp;</p></div><b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Placement of HSA/FSA based on patient friction.&nbsp;</b>
+<p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Some integrations like Highmark were low friction for patients: Funds were automatically pulled in, no patient login or consent required. In this cases, HSA/FSA was prominent so patients could use their funds towards their bills. Plaid, on the other hand, was high friction: Patients needed to remember they had an account, find their bank, and login. In these cases, HSA/FSA was much lower in the app so that we would not distract patients who didn't have an account from paying. Establishing principles around HSA/FSA placement made it easier for us to add new integrations over time.&nbsp;<br></p>
+      <img src="./uploads/pasted-1787088033284-0.png" alt="HSA/FSA placement across Highmark, HealthEquity, and Plaid, ordered by patient friction" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
+
+      
+      <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Legal &amp; regulatory requirements</b><p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">As we scaled to more clients, Legal required disclosure around eligible expenses. This is because FSA/HSA plans can vary in terms of what funds could be used towards, so I designed this FAQ modal in the activation flow.&nbsp;<br></p><img src="./uploads/pasted-1787088731812-0.png" alt="Consent screen with a Learn more FAQ modal added for legal disclosure" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px"><b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Allowing patients to revoke access</b><p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">If patients wanted to revoke access to their account, they would have to call in. Then on our end, an engineer would have to remove their account. To allow patients to self serve and reduce calls, I designed a revocation flow in settings.&nbsp;<br></p><img src="./uploads/pasted-1787089756548-0.png" alt="Self-serve revoke flow: settings, confirmation modal, and permission removed state" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
+
+      
+    </div>
+
+    <div>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The outcome</h2>
+      
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Due to the strong performance at our Beta client and additional iterations, we rolled out HealthEquity to the rest of our client base. To expand market share, we also explored other HSA/FSA integration partners such as Plaid.&nbsp;</p>
+    </div>
+
+    <div class="cs-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+        <sc-for list="{{ headlineMetrics }}" as="m" hint-placeholder-count="3">
+          <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
+            <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ m.value }}</div>
+            <div style="font-size:18px;color:{{ textSecondary }};font-weight:400;margin-top:6px;line-height:1.4">{{ m.label }}</div>
+          </div>
+        </sc-for>
+      </div><a href="/" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mobileMenuOpen: false };
+  renderVals() {
+    const toggleMobileMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
+    const closeMobileMenu = () => this.setState({ mobileMenuOpen: false });
+    return {
+      mobileMenuOpen: this.state.mobileMenuOpen,
+      toggleMobileMenu,
+      closeMobileMenu,
+      bgColor: '#FCFAF7',
+      textPrimary: '#1A1A1A',
+      textSecondary: '#4A4A45',
+      navLinkStyle: { transition: 'color .15s' },
+      accentColor: '#7C3AED',
+      accentSoft: 'rgba(124,58,237,0.12)',
+      blobOpacity: 0.62,
+      blobLavender: '#E4CBFF',
+      blobPeach: '#FFDDC2',
+      blobSky: '#E4CBFF',
+      blobBlush: '#FFDDC2',
+      headlineMetrics: [
+        { value: '+5.4%', label: 'Collections lift at Beta client, ~$1.5M/yr' },
+        { value: '+2.4%', label: 'More patients reaching the Cedar portal' },
+        { value: '+10%', label: 'Payment rate lift from FSA expiration emails' },
+      ],
+      facts: [
+        { k: 'Company', v: 'Cedar' },
+        { k: 'Role', v: 'Lead designer' },
+        { k: 'Timeline', v: 'Multi-phase, ongoing' },
+        { k: 'Team', v: 'Product, Engineering, Data Science, Legal' },
+        { k: 'Stakes', v: 'HSA/FSA reach & collections' },
+        { k: 'Key metric', v: 'Collections rate' },
+      ],
+      opportunityStats: [
+        { value: '~33%', label: 'Of Americans have an HSA or FSA account' },
+        { value: '22%', label: 'Of the HSA/FSA market held by HealthEquity — the largest administrator in the country' },
+        { value: '33%', label: 'Relative increase in HSA/FSA payments when Cedar showed patients their balance' },
+      ],
+      buildingCards: [
+        { title: 'Activation/Consent', desc: "While Highmark allowed us to pull funds directly from a patient's account, HealthEquity required explicit consent first.", icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>' } },
+        { title: 'Showing funds', desc: 'Once patients consented to showing their balance, it needed to show up alongside their bills. ', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>' } },
+        { title: 'Funds utilization', desc: 'Patients don\'t pay right away, so the funds needed to meet them at the right moment in their journey.', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>' } },
+      ],
+      providenceStats: [
+        { value: '+2.4%', label: 'More patients reaching Cedar app from comms' },
+        { value: '+5.4%', label: 'Collections lift at client, ~$1.5M/yr' },
+        { value: '13%', label: 'Patients consented to showing balance' },
+      ],
+      spectrumCards: [
+        { tag: 'Seamless', title: 'Highmark', desc: 'We already know a patient has a balance and can pull it in directly, no patient action required.' },
+        { tag: 'Middle', title: 'HealthEquity', desc: "We know the patient has a balance, but need their consent before we can show it." },
+        { tag: 'Hard', title: 'Plaid', desc: "We don't know upfront whether a patient has a balance at all, so the experience has to work without that certainty." },
+      ],
+      patientFixCards: [
+        { title: 'Nicknames', desc: "Patient survey comments kept surfacing the same confusion: we displayed cards by their last four digits, and patients with more than one HSA/FSA account couldn't tell them apart. I designed the ability for patients to nickname their cards when they linked them.", icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>' } },
+        { title: 'Self-serve revoke', desc: 'Removing account access originally required a phone call and a manual fix from engineering. I designed a self-serve setting so patients could revoke access themselves, closing the loop on the consent model.', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12h6"/></svg>' } },
+        { title: 'Activation modal, updated for legal', desc: 'As we scaled to more clients, Legal required clearer disclosure. I redesigned the activation flow to add a "Learn more" FAQ modal alongside the consent screen, spelling out what data a provider could see and which bills qualify.', icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>' } },
+      ],
+      outcomeStats: [
+        { value: '+5.4%', label: 'Collection rate lift at Providence, ~$1.5M/year at just one client' },
+        { value: '+2.4%', label: 'More patients reaching the Cedar portal, driven mostly by the email nudge' },
+        { value: '+10%', label: 'Payment rate lift from targeted FSA expiration emails' },
+        { value: '16%', label: 'Of patients shifted to paying with their HBA card instead of another method' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

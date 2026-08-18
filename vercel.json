@@ -2,6 +2,7 @@
   "rewrites": [
     { "source": "/", "destination": "/index.dc.html" },
     { "source": "/code-yellow", "destination": "/code-yellow.dc.html" },
-    { "source": "/resume", "destination": "/Resume.dc.html" }
+    { "source": "/resume", "destination": "/Resume.dc.html" },
+    { "source": "/healthequity", "destination": "/HealthEquity.dc.html" }
   ]
 }

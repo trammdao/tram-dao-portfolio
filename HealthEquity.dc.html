@@ -170,7 +170,7 @@
             </div>
             <div>
               <img src="./uploads/pasted-1787085921459-0.png" style="width:100%;height:440px;object-fit:contain;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
-              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>5. Funds connected!<br></b>Patients see much their funds cover.</span></p>
+              <p style="margin:8px 0 0;font-size:14px;line-height:1.5;color:{{ textSecondary }};text-align:center;font-style:italic"><span style="font-style: normal;"><b>5. Funds connected!<br></b>Patients see how much their funds cover.</span></p>
             </div>
           </div>
           </div>
@@ -187,7 +187,7 @@
         </div>
         <div>
           <h3 style="margin:0 0 10px;font-size:22px;font-weight:700;letter-spacing:-0.01em">Showing funds</h3>
-          <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I designed the funds component to be flexible enough to handle different account and integration states. For example, if the connected account was a FSA, we prioritized showing the expiration. In another example, if the patient had not yet verified their identify, we prompted them to view their funds rather than show their account details.&nbsp;&nbsp;</p>
+          <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">I designed the funds component to be flexible enough to handle different account and integration states. For example, if the connected account was a FSA, we prioritized showing the expiration. In another example, if the patient had not yet verified their identity, we prompted them to view their funds rather than show their account details.&nbsp;&nbsp;</p>
           <div style="width:100vw;margin-left:calc(50% - 50vw);padding:8px 0 32px">
             <div style="max-width:840px;margin-left:auto;margin-right:auto;padding:0 32px">
               <img src="./uploads/pasted-1785980857698-0.png" style="width:100%;border-radius:16px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block">
@@ -212,7 +212,7 @@
     <div style="width: 100vw; margin-left: calc(50% - 50vw); padding: 48px 0; background-color: #7C3AED0D"><div style="max-width:840px;margin:0 auto;padding:0 32px;display:flex;flex-direction:column;gap:18px">
       <span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};width:fit-content">MVP LAUNCH</span>
       <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">Initial results at beta client</h3>
-      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We launched a 50/50 A/B rest with one of our clients: 19k patients in test, 19k in control.</p>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We launched a 50/50 A/B test with one of our clients: 19k patients in test, 19k in control.</p>
       <div class="cs-grid2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
         <sc-for list="{{ providenceStats }}" as="p" hint-placeholder-count="4">
           <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
@@ -220,7 +220,7 @@
             <div style="font-size:16px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">{{ p.label }}</div>
           </div>
         </sc-for>
-      </div><div style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Initial results were promising: Comms seem to be a main driver of payment. While 13% of patients consented to showing their balance, we were seeing more patient pay. These patients didn't need to see their balance - Just the reminder of the available funds was enough to get them to use them.<br></div>
+      </div><div style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Initial results were promising: Comms seem to be a main driver of payment. While 13% of patients consented to showing their balance, we were seeing more patients pay. These patients didn't need to see their balance - Just the reminder of the available funds was enough to get them to use them.<br></div>
       
     </div></div>
 
@@ -229,16 +229,16 @@
       <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Three threads I followed after launching with our beta client: Improving activation, increase FSA utilization, and support card nicknames.&nbsp;</p>
 
       <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Improving the activation callout on the home page</b>
-      <div style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">A few theories on why patients weren't activating their accounts:<br><ol><li>Patients use their HSA account as an investment account rather than for healthcare.</li><li>Patients weren't ready to pay yet so checking their balance wasn't a priority.&nbsp;</li><li>Patients were unsure of the value of linking their account.</li></ol><div>I decided to focus <b>Theory #3. </b>The current framing phrased linking the account as a question and buried the lead of viewing the account balance. Working with Legal, I got updated copy approve that was more direct and action-oriented.&nbsp;</div></div>
+      <div style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">A few theories on why patients weren't activating their accounts:<br><ol><li>Patients use their HSA account as an investment account rather than for healthcare.</li><li>Patients weren't ready to pay yet so checking their balance wasn't a priority.&nbsp;</li><li>Patients were unsure of the value of linking their account.</li></ol><div>I decided to focus <b>Theory #3. </b>The current framing phrased linking the account as a question and buried the lead of viewing the account balance. Working with Legal, I got updated copy approved that was more direct and action-oriented.&nbsp;</div></div>
 
       <img src="./uploads/pasted-1787081414831-0.png" alt="Before and after of the activation callout on the bill home page" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
 
       <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Improving FSA utilization</b>
-      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}; display: flex; flex-direction: column; gap: 12px">As an FSA-user, I was inspired by emails I received from The FSA Store at the end of year urging my to use my funds before they expire. I wanted to translate this sort of nudge into the healthcare billing context with the added benefit of actually knowing when funds expire through HealthEquity. To test this idea, I built the email using a low code internal email editor, got buy-in from a few client managers to launch this email as a one-off test, and collabed with a data scientist to interpret the results<br></p>
+      <p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}; display: flex; flex-direction: column; gap: 12px">As an FSA-user, I was inspired by emails I received from The FSA Store at the end of the year urging me to use my funds before they expire. I wanted to translate this sort of nudge into the healthcare billing context with the added benefit of actually knowing when funds expire through HealthEquity. To test this idea, I built the email using a low code internal email editor, got buy-in from a few client managers to launch this email as a one-off test, and collabed with a data scientist to interpret the results<br></p>
       <img src="./uploads/pasted-1787080176427-0.png" alt="Inspo vs. experiment comparison for the FSA expiration email" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
 
       <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Card nicknames</b>
-      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Patient survey comments kept surfacing the same confusion: Patients with saved HSA/FSA cards didn't recognize them from the last 4 digits alone. Ideally, in the future, we would be able to pull these automatically in automatically for patients through HealthEquity. In the meantime, I designed a way for patients to add a card nickname for saved payment methods.&nbsp;</p>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Patient survey comments kept surfacing the same confusion: Patients with saved HSA/FSA cards didn't recognize them from the last 4 digits alone. Ideally, in the future, we would be able to pull these in automatically for patients through HealthEquity. In the meantime, I designed a way for patients to add a card nickname for saved payment methods.&nbsp;</p>
       <img src="./uploads/pasted-1787086021613-0.png" alt="Adding a card nickname, then seeing it preselected at the next payment" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
       
       
@@ -252,7 +252,7 @@
     <div>
       <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Scaling it into a system</h2>
       <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}">As we scaled HealthEquity and integrated with other partners, we needed to start thinking about our HSA/FSA feature set as a system.&nbsp;</p></div><b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Placement of HSA/FSA based on patient friction.&nbsp;</b>
-<p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Some integrations like Highmark were low friction for patients: Funds were automatically pulled in, no patient login or consent required. In this cases, HSA/FSA was prominent so patients could use their funds towards their bills. Plaid, on the other hand, was high friction: Patients needed to remember they had an account, find their bank, and login. In these cases, HSA/FSA was much lower in the app so that we would not distract patients who didn't have an account from paying. Establishing principles around HSA/FSA placement made it easier for us to add new integrations over time.&nbsp;<br></p>
+<p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Some integrations like Highmark were low friction for patients: Funds were automatically pulled in, no patient login or consent required. In these cases, HSA/FSA was prominent so patients could use their funds towards their bills. Plaid, on the other hand, was high friction: Patients needed to remember they had an account, find their bank, and login. In these cases, HSA/FSA was much lower in the app so that we would not distract patients who didn't have an account from paying. Establishing principles around HSA/FSA placement made it easier for us to add new integrations over time.&nbsp;<br></p>
       <img src="./uploads/pasted-1787088033284-0.png" alt="HSA/FSA placement across Highmark, HealthEquity, and Plaid, ordered by patient friction" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
 
       

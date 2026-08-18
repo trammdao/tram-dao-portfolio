@@ -208,23 +208,23 @@ class Component extends DCLogic {
       const cards = Array.from(document.querySelectorAll('.project-panel'));
       if (!cards.length) return;
       if (window.innerWidth <= 900) { cards.forEach(c => { c.style.opacity = ''; }); return; }
-      const focus = window.scrollY + window.innerHeight * 0.42;
+      const vh = window.innerHeight;
+      const sy = window.scrollY;
+      // natural (non-sticky) document positions
       const tops = cards.map(c => c.offsetTop + (c.offsetParent ? c.offsetParent.offsetTop : 0));
-      let active = 0;
-      if (focus <= tops[0]) active = 0;
-      else if (focus >= tops[tops.length - 1]) active = tops.length - 1;
-      else {
-        for (let i = 0; i < tops.length - 1; i++) {
-          if (focus >= tops[i] && focus < tops[i + 1]) {
-            active = i + (focus - tops[i]) / (tops[i + 1] - tops[i]);
-            break;
-          }
-        }
-      }
       cards.forEach((c, i) => {
-        const d = Math.max(0, Math.abs(i - active) - 0.2);
-        const op = Math.max(0.04, 1 - Math.pow(d, 1.1) * 2.4);
-        c.style.opacity = String(op);
+        const h = c.offsetHeight;
+        const naturalTop = tops[i] - sy;
+        const stickyTop = parseFloat(getComputedStyle(c).top) || 0;
+        const pinnedTop = Math.max(naturalTop, stickyTop);
+        // the next card slides up over this one
+        const coverTop = i + 1 < tops.length ? tops[i + 1] - sy : Infinity;
+        const visible = Math.min(pinnedTop + h, coverTop, vh) - Math.max(pinnedTop, 0);
+        const maxVis = Math.max(1, Math.min(h, vh - stickyTop));
+        const frac = Math.max(0, Math.min(1, visible / maxVis));
+        // hold full opacity while essentially all of the reachable card is visible
+        const t = Math.max(0, Math.min(1, (frac - 0.08) / 0.82));
+        c.style.opacity = String(Math.max(0.04, Math.pow(t, 1.2)));
         c.style.willChange = 'opacity';
       });
     };

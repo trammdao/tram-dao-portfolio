@@ -222,8 +222,8 @@ class Component extends DCLogic {
         }
       }
       cards.forEach((c, i) => {
-        const d = Math.max(0, Math.abs(i - active) - 0.45);
-        const op = Math.max(0.04, 1 - Math.pow(d, 1.1) * 1.7);
+        const d = Math.max(0, Math.abs(i - active) - 0.2);
+        const op = Math.max(0.04, 1 - Math.pow(d, 1.1) * 2.4);
         c.style.opacity = String(op);
         c.style.willChange = 'opacity';
       });

@@ -20,7 +20,10 @@
   .cs-alice-row{display:flex;align-items:center;justify-content:center;padding:20px 0;width:100%}
   .cs-brainstorm-row{display:flex;align-items:center;justify-content:center;padding:20px 0}
   .cs-concepts-row{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:12px}
+  .cs-chapterbar::-webkit-scrollbar{display:none}
   @media (max-width:900px){
+    .cs-chapterbar{bottom:16px;justify-content:flex-start}
+    .cs-chapterbar a{font-size:14px !important;padding:9px 14px !important}
     .cs-hero{height:auto !important;aspect-ratio:1630/1800 !important;background-image:url('./uploads/pasted-1785706154010-0.png') !important;background-size:contain !important;background-repeat:no-repeat !important;background-position:center top !important}
     .cs-concepts-row{display:flex !important;flex-wrap:wrap;justify-content:center}
     .cs-concepts-row img{flex:0 0 calc(33.333% - 11px);max-width:calc(33.333% - 11px)}
@@ -121,14 +124,13 @@
 
   <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:20px 32px 100px;display:flex;flex-direction:column;gap:56px">
 
-    <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The situation</h2>
+    <div id="ch-situation" style="scroll-margin-top:96px">
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The opportunity</h2>
       <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Cedar's biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response, responsible for defining and executing on a comms personalization strategy.&nbsp;</p>
       <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">The bakeoff was measured two ways: First, the client paused Cedar at one location and ran a before/after comparison there. Before they paused us, we had a month to rapidly launch experiments and boost our performance baseline going in. Second, they compared that paused location against a sister location that kept Cedar on — the more direct head-to-head against Epic, where I focused most of the experimentation.</p>
     </div>
 
-    <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Identifying the opportunity</h2>
+    <div id="ch-opportunity" style="scroll-margin-top:96px;margin-top:-40px">
       <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Data Science funnel and cohort analysis pointed to an opportunity to improve communications for insured patients with big bills.&nbsp;</p>
       <div class="cs-grid2" style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
         <sc-for list="{{ opportunityCards }}" as="c" hint-placeholder-count="2">
@@ -141,7 +143,7 @@
       </div>
     </div>
 
-    <div>
+    <div id="ch-research" style="scroll-margin-top:96px">
       <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Tying the opportunity to patient research</h2>
       <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">After we identified an opportunity to improve top of funnel conversion for patients with big bills, I wanted to dig into who these patients actually are. I connected it to prior UXR research on ALICE patients: <b>A</b>sset-<b>L</b>imited, <b>I</b>ncome-<b>C</b>onstrained, <b>E</b>mployed. These patients make too much to qualify for financial assistance, but are still struggling to pay their medical bills in addition to other rising life expenses.&nbsp;</p>
       <p style="margin:0 0 20px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Understanding these patients shaped how I approached communicating with these patients: Rather than transaction ("here's what you owe"), comms needed to be supportive and directive in helping patients find affordable solutions for managing their rising healthcare costs.&nbsp;</p>
@@ -173,7 +175,7 @@
       <p style="margin:8px 0 0;font-size:14px;line-height:1.6;color:{{ textSecondary }};text-align:center;font-style:italic">Comms concepts that we tested with look alike ALICE patients.</p>
     </div>
 
-    <div>
+    <div id="ch-experiments" style="scroll-margin-top:96px">
       <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Turning concepts into minimal viable tests</h2>
       <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We had a goal of impacting patients 1x a week. This was made possible with an internal email tool I previously designed called Promoter, which allowed us to send one-off emails to targeted lists within a few days. While these emails were much more simple than our typical emails, it allowed us to launch experiments to get a quick signal on our ideas before further eng investment. We called these email experiments <b>minimal viable tests</b>. Here are two examples of them.&nbsp;</p>
     </div>
@@ -320,18 +322,19 @@
 
     
 
-    <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Team enablement with AI</h2>
+    
+
+    <div id="ch-enablement" style="scroll-margin-top:96px">
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">AI enablement</h2>
       <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">This project established a repeatable experimentation process that was later adopted into other personalization-focused initiatives. To enable the broader Product team, I created these resources:</p>
       <ul style="margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px">
         <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">A designer's manual for comms personalization</li>
         <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">Claude skills for writing product emails and text messages so non-designers could create comms that aligned with our copy principles and guidelines.</li>
         <li style="font-size:18px;line-height:1.7;color:{{ textSecondary }}">Legal x Data documentation, collaborating with Legal team to outlines dos/don't around showing patient data in comms and other unauthenticated states. This later enabled a Legal Agent that enables makers to get product changes reviewed over Slack in minutes as opposed to the previous 1-week turnaround.&nbsp;</li>
       </ul>
-    </div>
-
-    <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The outcome</h2>
+    </div><div id="ch-outcome" style="scroll-margin-top:96px">
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Outcomes</h2>
+      <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">The client re-signed for another 3-years and we established ourselves as innovations partners. We scaled the successful experiments to the rest of our clients and spun up a comms personalization work stream focused on serving our top clients. I served as the Product DRI where I owned the product strategy, design, and implementation of experiments.&nbsp;</p>
       <div class="cs-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
         <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
           <div style="width:48px;height:48px;border-radius:14px;background:{{ accentSoft }};display:flex;align-items:center;justify-content:center;color:{{ accentColor }};margin-bottom:4px" dangerouslySetInnerHTML="{{ trophyIcon }}"></div>
@@ -353,16 +356,58 @@
 
     <a href="/" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content">← Back to all work</a>
   </section>
+
+  <div class="cs-chapterbar" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;z-index:40;max-width:calc(100vw - 32px);display:flex;align-items:center;gap:4px;padding:6px;border-radius:999px;background:rgba(255,255,255,0.72);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 14px 34px rgba(130,110,170,0.18);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none">
+    <sc-for list="{{ chapters }}" as="ch" hint-placeholder-count="5">
+      <a href="{{ ch.href }}" onClick="{{ ch.onClick }}" style="flex:none;font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;white-space:nowrap;text-decoration:none;transition:background .2s, color .2s;color:{{ ch.color }};background:{{ ch.bg }}">{{ ch.label }}</a>
+    </sc-for>
+  </div>
 </div>
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { mobileMenuOpen: false };
+  state = { mobileMenuOpen: false, activeChapter: 'ch-situation' };
+  chapterDefs = [
+    { id: 'ch-situation', label: 'Opportunity' },
+    { id: 'ch-research', label: 'Research' },
+    { id: 'ch-experiments', label: 'Experiments' },
+    { id: 'ch-enablement', label: 'Enablement' },
+    { id: 'ch-outcome', label: 'Outcomes' },
+  ];
+  componentDidMount() {
+    this.onScroll = () => {
+      let active = this.chapterDefs[0].id;
+      for (const c of this.chapterDefs) {
+        const el = document.getElementById(c.id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.35) active = c.id;
+      }
+      if (active !== this.state.activeChapter) this.setState({ activeChapter: active });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() { window.removeEventListener('scroll', this.onScroll); }
   renderVals() {
     const toggleMobileMenu = () => this.setState(s => ({ mobileMenuOpen: !s.mobileMenuOpen }));
     const closeMobileMenu = () => this.setState({ mobileMenuOpen: false });
+    const chapters = this.chapterDefs.map(c => {
+      const active = this.state.activeChapter === c.id;
+      return {
+        ...c,
+        href: '#' + c.id,
+        color: active ? '#FFFFFF' : '#4A4A45',
+        bg: active ? '#1A1A1A' : 'transparent',
+        onClick: (e) => {
+          e.preventDefault();
+          const el = document.getElementById(c.id);
+          if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+          this.setState({ activeChapter: c.id });
+        },
+      };
+    });
     return {
+      chapters,
       mobileMenuOpen: this.state.mobileMenuOpen,
       toggleMobileMenu,
       closeMobileMenu,

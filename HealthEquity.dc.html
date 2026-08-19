@@ -19,6 +19,7 @@
   .nav-hamburger{display:none}
   .cs-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
   @media (max-width:900px){
+    .cs-hero{height:auto !important;aspect-ratio:1630/1800 !important;background-image:url('./uploads/pasted-1785969481829-0.png') !important;background-size:contain !important;background-repeat:no-repeat !important;background-position:center top !important}
     .cs-grid5{grid-template-columns:repeat(2,1fr) !important}
     .cs-metrics{grid-template-columns:1fr !important}
     .cs-facts{grid-template-columns:repeat(2,1fr) !important}
@@ -74,7 +75,7 @@
   </sc-if>
 
   <section style="position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:40px 32px 0">
-    <div style="border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(130,110,170,0.15);height:420px;background-image:url('./uploads/pasted-1785969421862-0.png');background-size:cover;background-position:center"></div>
+    <div class="cs-hero" style="border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(130,110,170,0.15);height:420px;background-image:url('./uploads/pasted-1785969421862-0.png');background-size:cover;background-position:center"></div>
   </section>
 
   <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:56px 32px 40px">
@@ -111,13 +112,13 @@
   <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:20px 32px 100px;display:flex;flex-direction:column;gap:56px">
 
     <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The situation</h2>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The opportunity</h2>
       <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Cedar already had an integration with <b>Highmark</b>, an insurance company, that showed patients their HSA/FSA balance alongside their medical bill. The results were promising: a <b>33% relative increase in HSA/FSA payments.</b> The problem was reach: It was limited to only a few healthcare providers and a fraction of patients who had Highmark HSA/FSA accounts.</p>
-      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">To increase reach, Cedar partnered with HealthEquity, the largest HSA administrator in the country at 22% of the market. I designed the E2E patient experience, from account activation to utilization.</p>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">To increase reach, we partnered with HealthEquity, the largest HSA administrator in the country at 22% of the market. I designed the E2E patient experience for the MVP and further enhancements to get it to GA-ready across Cedar's clientbase.</p>
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Identifying the opportunity</h2>
+      
       <div class="cs-grid3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:24px">
         <sc-for list="{{ opportunityStats }}" as="s" hint-placeholder-count="3">
           <div style="border-radius:20px;background:rgba(255,255,255,0.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.8);box-shadow:0 16px 40px rgba(130,110,170,0.1);padding:26px 22px">
@@ -225,7 +226,7 @@
     </div></div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Iterating and improving</h2>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Iterations + improvements</h2>
       <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Three threads I followed after launching with our beta client: Improving activation, increase FSA utilization, and support card nicknames.&nbsp;</p>
 
       <b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Improving the activation callout on the home page</b>
@@ -250,7 +251,7 @@
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Scaling it into a system</h2>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Scaling it to GA</h2>
       <div style="box-sizing: border-box; display: flex; flex-direction: column; gap: 12px"><p style="margin: 0 0 24px; font-size: 18px; line-height: 1.7; color: {{ textSecondary }}">As we scaled HealthEquity and integrated with other partners, we needed to start thinking about our HSA/FSA feature set as a system.&nbsp;</p></div><b style="font-size:22px;color:{{ textPrimary }};line-height:1.25;margin-bottom:8px;display:block">Placement of HSA/FSA based on patient friction.&nbsp;</b>
 <p style="margin:0 0 24px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Some integrations like Highmark were low friction for patients: Funds were automatically pulled in, no patient login or consent required. In these cases, HSA/FSA was prominent so patients could use their funds towards their bills. Plaid, on the other hand, was high friction: Patients needed to remember they had an account, find their bank, and login. In these cases, HSA/FSA was much lower in the app so that we would not distract patients who didn't have an account from paying. Establishing principles around HSA/FSA placement made it easier for us to add new integrations over time.&nbsp;<br></p>
       <img src="./uploads/pasted-1787088033284-0.png" alt="HSA/FSA placement across Highmark, HealthEquity, and Plaid, ordered by patient friction" style="width:100%;border-radius:20px;box-shadow:0 12px 30px rgba(130,110,170,0.18);display:block;margin-bottom:24px">
@@ -262,9 +263,9 @@
     </div>
 
     <div>
-      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The outcome</h2>
+      <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">Outcomes</h2>
       
-      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Due to the strong performance at our Beta client and additional iterations, we rolled out HealthEquity to the rest of our client base. To expand market share, we also explored other HSA/FSA integration partners such as Plaid.&nbsp;</p>
+      <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Due to the strong performance at our Beta client and additional iterations, we rolled out HealthEquity to the rest of our client base. To expand market share, we also integrated with other partners such as Plaid which was able to leverage a lot of the systems and design patterns established in this project.&nbsp;</p>
     </div>
 
     <div class="cs-metrics" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
@@ -300,7 +301,7 @@ class Component extends DCLogic {
       blobSky: '#E4CBFF',
       blobBlush: '#FFDDC2',
       headlineMetrics: [
-        { value: '+5.4%', label: 'Collections lift at Beta client, ~$1.5M/yr' },
+        { value: '+5.4%', label: 'Collections lift at beta client, ~$1.5M/yr' },
         { value: '+2.4%', label: 'More patients reaching the Cedar portal' },
         { value: '+10%', label: 'Payment rate lift from FSA expiration emails' },
       ],
@@ -313,9 +314,9 @@ class Component extends DCLogic {
         { k: 'Key metric', v: 'Collections rate' },
       ],
       opportunityStats: [
-        { value: '~33%', label: 'Of Americans have an HSA or FSA account' },
-        { value: '22%', label: 'Of the HSA/FSA market held by HealthEquity — the largest administrator in the country' },
-        { value: '33%', label: 'Relative increase in HSA/FSA payments when Cedar showed patients their balance' },
+        { value: '1/3', label: 'Of Americans have an HSA or FSA account' },
+        { value: '22%', label: 'HSA/FSA market held by HealthEquity, the largest admin in the country' },
+        { value: '+33%', label: 'HSA/FSA payments when showing patients their balance' },
       ],
       buildingCards: [
         { title: 'Activation/Consent', desc: "While Highmark allowed us to pull funds directly from a patient's account, HealthEquity required explicit consent first.", icon: { __html: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>' } },

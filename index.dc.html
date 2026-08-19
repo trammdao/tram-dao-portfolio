@@ -35,7 +35,7 @@
     .hero-h1{font-size:38px !important}
     .project-panel{flex-direction:column !important;min-height:0 !important}
     .project-text{padding:28px !important}
-    .project-visual{flex:none !important;width:100% !important;min-width:0 !important;height:220px !important;background-position:top center !important}
+    .project-visual{flex:none !important;width:100% !important;min-width:0 !important;height:auto !important;aspect-ratio:1630/1800 !important;background-size:contain !important;background-repeat:no-repeat !important;background-position:center top !important}
     .about-card{flex-direction:column !important;padding:32px !important}
     .about-photo{width:96px !important;height:96px !important}
     .project-desc{display:none !important}
@@ -132,7 +132,8 @@
               <a href="{{ p.caseStudyUrl }}" style="font-size:15px;font-weight:600;color:{{ textPrimary }};text-decoration:underline;text-underline-offset:4px;width:fit-content;margin-top:4px">Read the full case study →</a>
             </sc-if>
           </div>
-          <sc-if value="{{ p.image }}"><div class="project-visual" style="flex:1;background-image:url({{ p.image }});background-size:cover;background-position:top left;min-width:280px;align-self:stretch"></div></sc-if>
+          <sc-if value="{{ p.linkedImage }}"><a href="{{ p.caseStudyUrl }}" class="project-visual" style="flex:1;background-image:url({{ p.image }});background-size:cover;background-position:top left;min-width:280px;align-self:stretch;display:block;cursor:pointer"></a></sc-if>
+          <sc-if value="{{ p.plainImage }}"><div class="project-visual" style="flex:1;background-image:url({{ p.image }});background-size:cover;background-position:top left;min-width:280px;align-self:stretch"></div></sc-if>
           <sc-if value="{{ p.gradient }}"><div class="project-visual" style="flex:1;background:{{ p.gradient }};min-width:280px"></div></sc-if>
         </div>
       </sc-for>
@@ -156,11 +157,13 @@
     <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
       <sc-for list="{{ experience }}" as="job" hint-placeholder-count="3">
         <div style="display:flex;align-items:center;gap:12px;padding:16px 24px;border-radius:16px;background:rgba(255,255,255,0.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 12px 30px rgba(130,110,170,0.08)">
-          <sc-if value="{{ job.url }}"><a href="{{ job.url }}" target="_blank" style="font-weight:700;font-size:14px;color:{{ textPrimary }}">{{ job.company }}</a></sc-if>
-          <sc-if value="{{ job.noUrl }}"><span style="font-weight:700;font-size:14px">{{ job.company }}</span></sc-if>
-          <span style="width:4px;height:4px;border-radius:50%;background:{{ textSecondary }}"></span>
-          <span style="font-size:14px;color:{{ textSecondary }};font-weight:400">{{ job.role }}</span>
-          <span style="font-size:14px;color:{{ textSecondary }};font-weight:400;opacity:0.7">{{ job.years }}</span>
+          <div class="role-group" style="display:flex;align-items:center;flex-wrap:wrap;gap:8px;row-gap:2px;flex:1 1 auto;min-width:0">
+            <sc-if value="{{ job.url }}"><a href="{{ job.url }}" target="_blank" style="font-weight:700;font-size:14px;color:{{ textPrimary }}">{{ job.company }}</a></sc-if>
+            <sc-if value="{{ job.noUrl }}"><span style="font-weight:700;font-size:14px">{{ job.company }}</span></sc-if>
+            <span style="width:4px;height:4px;border-radius:50%;background:{{ textSecondary }};flex:none"></span>
+            <span style="font-size:14px;color:{{ textSecondary }};font-weight:400">{{ job.role }}</span>
+          </div>
+          <span class="date-range" style="font-size:14px;color:{{ textSecondary }};font-weight:400;opacity:0.7;flex-shrink:0;white-space:nowrap;margin-left:auto">{{ job.years }}</span>
         </div>
       </sc-for>
     </div>
@@ -263,7 +266,7 @@ class Component extends DCLogic {
       blobBlush: '#FFDDC2',
       projects: [
         { org: 'Cedar', rowDirection: 'row', title: 'Code Yellow: Outperforming Epic to save a $25M client', tags: ['Payments', 'Experimentation'], desc: 'Cedar\u2019s biggest client threatened to churn, triggering a performance bakeoff against Epic, our biggest competitor. I led the Design response: Rapid comms experiments focused on helping patients better manage and pay their medical bills.', stats: [{ value: '+24%', label: 'collections rate vs. Epic, securing the renewal' }, { value: '25+', label: 'experiments shipped in 5 months' }], caseStudyUrl: '/code-yellow', showLink: true, image: './uploads/pasted-1785706154010-0.png' },
-        { org: 'Cedar', rowDirection: 'row', title: 'Integrating with HealthEquity to make it easier to use HSA/FSA funds', tags: ['Payments Integration'], desc: '30% of Americans have a health savings account, but many forget these funds exist. To make it easier to use these funds, Cedar integrated with HealthEquity to surface HSA/FSA funds to patients alongside their medical bills. I designed the E2E experience, from activation to utilization. ', stats: [{ value: '+5%', label: 'collections rate ($1.5M/yr w/ first client)' }, { value: '33%', label: 'more likely to use HSA/FSA when surfaced' }], comingSoon: false, showLink: true, caseStudyUrl: '/healthequity', image: './uploads/pasted-1785969481829-0.png' },
+        { org: 'Cedar', rowDirection: 'row', title: 'Integrating with HealthEquity to make it easier to use HSA/FSA funds', tags: ['Payments Integration'], desc: '30% of Americans have a health savings account, but many forget these funds exist. To make it easier to use these funds, Cedar integrated with HealthEquity to surface HSA/FSA funds to patients alongside their medical bills. I designed the E2E experience, from activation to utilization. ', stats: [{ value: '+5.4%', label: 'Collections lift at beta client, ~$1.5M/yr' }, { value: '+33%', label: 'more likely to use HSA/FSA when surfaced' }], comingSoon: false, showLink: true, caseStudyUrl: '/healthequity', image: './uploads/pasted-1785969481829-0.png' },
                 { org: 'Cedar', rowDirection: 'row', title: 'Integrating with Plaid to expand HSA/FSA reach', tags: ['Payments Integration'], desc: 'To expand HSA/FSA, Cedar integrated with Plaid to unlock hundreds of my banks. The catch: We didn\'t know if a patient had an account, so I had to design a connection flow that targeted HSA/FSA patients while not distracting the rest of our patients. ', stats: [{ value: '+3%', label: 'Projected lift ($3–5M/yr)' }, { value: '+50%', label: 'Increase in HSA/FSA coverage' }], comingSoon: true, showLink: false, caseStudyUrl: '#', image: './uploads/pasted-1785969633285-0.png' },
 { org: 'Cedar', rowDirection: 'row', title: 'Patient desirability of insurance features before medical visit', tags: ['UX Research'], desc: 'We wanted to understand if showing patients more information about their insurance before a visit (while viewing an estimate rather than a final bill) would change patient behavior. I led unmoderated testing with 15 patients to uncover low-lift opportunities to incorporating insurance details into Cedar\'s Pre-Visit product. ', stats: [{ value: '11/15', label: 'More likely to open estimate' }, { value: '13/15', label: 'Insurance details built confidence to pay' }], comingSoon: true, showLink: false, caseStudyUrl: '#', image: './uploads/pasted-1785853266624-0.png' },
       ],
@@ -272,6 +275,11 @@ class Component extends DCLogic {
         { company: 'HubSpot', role: 'Senior Product Designer', years: '2014–2021', url: 'https://www.hubspot.com/', logo: './assets/logo-hubspot.png' },
       ],
     };
+    vals.projects = vals.projects.map(p => ({
+      ...p,
+      linkedImage: !!(p.image && p.showLink),
+      plainImage: !!(p.image && !p.showLink),
+    }));
     return vals;
   }
 }

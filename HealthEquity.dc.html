@@ -20,6 +20,8 @@
   .cs-grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
   .cs-chapterbar::-webkit-scrollbar{display:none}
   @media (max-width:900px){
+    .cs-quote{flex-direction:column !important;padding:28px 24px !important;gap:20px !important;align-items:flex-start !important}
+    .cs-quote-photo{width:110px !important;height:110px !important}
     .cs-chapterbar{bottom:16px;justify-content:flex-start}
     .cs-chapterbar a{font-size:14px !important;padding:9px 14px !important}
     .cs-hero{height:auto !important;aspect-ratio:1630/1800 !important;background-image:url('./uploads/pasted-1785969481829-0.png') !important;background-size:contain !important;background-repeat:no-repeat !important;background-position:center top !important}
@@ -78,7 +80,7 @@
   </sc-if>
 
   <section style="position:relative;z-index:1;max-width:1120px;margin:0 auto;padding:40px 32px 0">
-    <div class="cs-hero" style="border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(130,110,170,0.15);height:420px;background-image:url('./uploads/pasted-1785969421862-0.png');background-size:cover;background-position:center"></div>
+    <div class="cs-hero" style="border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(130,110,170,0.15);height:420px;background-image:url('./uploads/pasted-1787262758302-0.png');background-size:cover;background-position:center"></div>
   </section>
 
   <section style="position:relative;z-index:1;max-width:840px;margin:0 auto;padding:56px 32px 40px">
@@ -118,6 +120,16 @@
       <h2 style="margin:0 0 16px;font-family:'Montserrat',sans-serif;font-size:32px;font-weight:700;letter-spacing:-0.015em">The opportunity</h2>
       <p style="margin:0 0 16px;font-size:18px;line-height:1.7;color:{{ textSecondary }}">Cedar already had an integration with <b>Highmark</b>, an insurance company, that showed patients their HSA/FSA balance alongside their medical bill. The results were promising: a <b>33% relative increase in HSA/FSA payments.</b> The problem was reach: It was limited to only a few healthcare providers and a fraction of patients who had Highmark HSA/FSA accounts.</p>
       <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">To increase reach, we partnered with HealthEquity, the largest HSA administrator in the country at 22% of the market. I designed the E2E patient experience for the MVP and further enhancements to get it to GA-ready across Cedar's clientbase.</p>
+      <blockquote class="cs-quote" style="margin:36px 0 0;padding:34px 40px;border-radius:24px;background:rgba(255,255,255,0.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,0.85);box-shadow:0 12px 30px rgba(130,110,170,0.1);display:flex;align-items:center;gap:32px">
+        
+        <div style="flex:1 1 auto;min-width:0;display:flex;align-items:flex-start;gap:24px">
+          <div aria-hidden="true" style="flex:none;margin-top:2px;color:rgba(124,58,237,0.28)"><svg width="70" height="42" viewBox="0 0 70 42" fill="none"><path d="M18 42C8 42 2 35.5 2 25.5C2 14.5 9 5.5 18.5 0.5C20 -0.3 21.4 1.9 20.1 3C14.6 7.7 11.6 12.6 11.2 17.4C12.9 16.3 15 15.6 17.4 15.6C24.6 15.6 30 20.9 30 28.4C30 36.3 24.8 42 18 42Z" fill="currentColor"></path><path d="M56 42C46 42 40 35.5 40 25.5C40 14.5 47 5.5 56.5 0.5C58 -0.3 59.4 1.9 58.1 3C52.6 7.7 49.6 12.6 49.2 17.4C50.9 16.3 53 15.6 55.4 15.6C62.6 15.6 68 20.9 68 28.4C68 36.3 62.8 42 56 42Z" fill="currentColor"></path></svg></div>
+          <div style="flex:1 1 auto;min-width:0">
+          <p style="margin: 0; font-family: 'Montserrat',sans-serif; font-size: 21px; line-height: 1.6; font-weight: 400; letter-spacing: -0.01em; text-wrap: pretty">I love clicking a button to view my HSA balance before paying my bill. Before I would have to go to a separate site and log in, but this new feature makes it very convenient and easy.</p>
+          <div style="margin-top:18px;font-size:14px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }}">PATIENT WITH AN HSA</div>
+          </div>
+        </div><div class="cs-quote-photo" style="flex: none; width: 172px; height: 172px; border-radius: 50%; background-image: url('./uploads/pasted-1787263127015-0.png'); background-size: 380% auto; background-position: 51% 31%; border: 4px solid rgba(255,255,255,0.95); box-shadow: 0 10px 24px rgba(130,110,170,0.18)"></div>
+      </blockquote>
     </div>
 
     <div>
@@ -217,9 +229,9 @@
       <span style="font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:{{ accentColor }};width:fit-content">MVP LAUNCH</span>
       <h3 style="margin:0;font-size:24px;font-weight:700;letter-spacing:-0.01em">Initial results at beta client</h3>
       <p style="margin:0;font-size:18px;line-height:1.7;color:{{ textSecondary }}">We launched a 50/50 A/B test with one of our clients: 19k patients in test, 19k in control.</p>
-      <div class="cs-grid2" style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+      <div class="cs-grid2" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px">
         <sc-for list="{{ providenceStats }}" as="p" hint-placeholder-count="4">
-          <div style="border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
+          <div style="flex:1 1 220px;max-width:280px;border-radius:16px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);padding:16px 20px">
             <div style="font-size:32px;font-weight:700;color:{{ accentColor }};letter-spacing:-0.02em">{{ p.value }}</div>
             <div style="font-size:16px;color:{{ textSecondary }};font-weight:400;margin-top:2px;line-height:1.4">{{ p.label }}</div>
           </div>
